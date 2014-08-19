@@ -1,5 +1,5 @@
 class OdsController < ApplicationController
-  before_action :set_od, only: [:show, :edit, :update, :destroy, :toggle_o]
+  before_action :set_od, only: [:show, :edit, :update, :destroy, :toggle_o, :toggle_d]
 
   # GET /ods
   # GET /ods.json
@@ -74,6 +74,12 @@ class OdsController < ApplicationController
   # TOGGLE_O /ods/1
   def toggle_o
     @od.toggle!(:o)
+    render :nothing => true
+  end
+
+  # TOGGLE_D /ods/1
+  def toggle_d
+    @od.toggle!(:d)
     render :nothing => true
   end
 
