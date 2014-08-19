@@ -22,6 +22,11 @@ class OdsController < ApplicationController
     @od = Od.new
   end
 
+  # GET /ods/new_no_timekey
+  def new_no_timekey
+    @od = Od.new
+  end
+
   # GET /ods/1/edit
   def edit
   end
