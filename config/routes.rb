@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :ods do
     get 'toggle_o', :on => :member
+    get 'toggle_d', :on => :member
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
