@@ -1,9 +1,14 @@
 class OdsController < ApplicationController
-  before_action :set_od, only: [:show, :edit, :update, :destroy]
+  before_action :set_od, only: [:show, :edit, :update, :destroy, :toggle_o]
 
   # GET /ods
   # GET /ods.json
   def index
+    @ods = Od.all
+  end
+
+  # GET /odtoggle
+  def toggle
     @ods = Od.all
   end
 
@@ -61,6 +66,12 @@ class OdsController < ApplicationController
     end
   end
 
+  # TOGGLE_O /ods/1
+  def toggle_o
+    @od.toggle!(:o)
+    render :nothing => true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_od
@@ -71,4 +82,5 @@ class OdsController < ApplicationController
     def od_params
       params.require(:od).permit(:instant, :o, :d, :timekey)
     end
+
 end
