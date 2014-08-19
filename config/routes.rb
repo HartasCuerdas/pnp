@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'ods/toggle'
+  get 'ods/new_no_timekey'
 
-  resources :ods
+  resources :ods do
+    get 'toggle_o', :on => :member
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
