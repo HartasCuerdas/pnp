@@ -1,0 +1,27 @@
+<h1>Listing ods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instant</th>
+      <th>O</th>
+      <th>D</th>
+      <th>Timekey</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ods.each do |od| %>
+      <tr>
+        <td><%= od.instant %></td>
+        <td><%= od.o %><%= link_to od.d, toggle_o_od_path(od), :remote => true %></td>
+        <td><%= od.d %></td>
+        <td><%= od.timekey %></td>
+        <td><%= link_to 'Show', od %></td>
+        <td><%= link_to 'Edit', edit_od_path(od) %></td>
+        <td><%= link_to 'Destroy', od, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
