@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instant:</strong>
+  <%= @od.instant %>
+</p>
+
+<p>
+  <strong>O:</strong>
+  <%= @od.o %>
+</p>
+
+<p>
+  <strong>D:</strong>
+  <%= @od.d %>
+</p>
+
+<p>
+  <strong>Timekey:</strong>
+  <%= @od.timekey %>
+</p>
+
+<%= link_to 'Edit', edit_od_path(@od) %> |
+<%= link_to 'Back', ods_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@od) do |f| %>
+  <% if @od.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@od.errors.count, "error") %> prohibited this od from being saved:</h2>
+
+      <ul>
+      <% @od.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instant %><br>
+    <%= f.datetime_select :instant %>
+  </div>
+  <div class="field">
+    <%= f.label :o %><br>
+    <%= f.check_box :o %>
+  </div>
+  <div class="field">
+    <%= f.label :d %><br>
+    <%= f.check_box :d %>
+  </div>
+  <div class="field">
+    <%= f.label :timekey %><br>
+    <%= f.text_field :timekey %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

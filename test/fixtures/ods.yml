@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instant: 2014-08-18 20:36:11
+  o: false
+  d: false
+  timekey: MyString
+
+two:
+  instant: 2014-08-18 20:36:11
+  o: false
+  d: false
+  timekey: MyString
