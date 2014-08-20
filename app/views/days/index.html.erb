@@ -18,7 +18,7 @@
           <td><%= day.date.strftime('%b %e, %a') %></td>
           <td class="oTotal"><%= day.oTotal %></td>
           <td class="dTotal"><%= day.dTotal %></td>
-          <td><%= link_to 'Total', total_day_path(day), :remote => true %></td>
+          <td><%= link_to 'Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
           <td><%= link_to 'Show', day %></td>
           <td><%= link_to 'Edit', edit_day_path(day) %></td>
           <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
