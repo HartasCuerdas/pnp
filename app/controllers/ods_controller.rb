@@ -9,7 +9,17 @@ class OdsController < ApplicationController
 
   # GET /odtoggle
   def toggle
-    @ods = Od.all
+  #  @ods = Od.all
+    @ods = Od.where('instant BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+    if (@ods.nil? || @ods.empty?)
+      Od.create(
+        [
+          { :instant => DateTime.now, :timekey => '06:00' },
+          { :instant => DateTime.now, :timekey => '06:30' },
+          { :instant => DateTime.now, :timekey => '23:30' }
+        ]
+      )
+    end
   end
 
   # GET /ods/1
