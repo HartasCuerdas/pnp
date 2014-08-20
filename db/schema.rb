@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819013611) do
+ActiveRecord::Schema.define(version: 20140820002143) do
+
+  create_table "days", force: true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "oTotal"
+    t.integer  "dTotal"
+  end
 
   create_table "ods", force: true do |t|
     t.datetime "instant"
@@ -20,6 +28,9 @@ ActiveRecord::Schema.define(version: 20140819013611) do
     t.string   "timekey"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "day_id"
   end
+
+  add_index "ods", ["day_id"], name: "index_ods_on_day_id"
 
 end
