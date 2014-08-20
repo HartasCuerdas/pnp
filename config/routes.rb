@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     get 'toggle_d', :on => :member
   end
 
+  resources :days do
+    resources :ods
+    get 'total', :on => :member
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
