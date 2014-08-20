@@ -14,7 +14,7 @@
 
     <tbody>
       <% @days.each do |day| %>
-        <tr>
+        <tr id="<%= day.id %>">
           <td><%= day.date.strftime('%b %e, %a') %></td>
           <td class="oTotal"><%= day.oTotal %></td>
           <td class="dTotal"><%= day.dTotal %></td>

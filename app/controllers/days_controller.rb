@@ -104,7 +104,10 @@ class DaysController < ApplicationController
     @day.dTotal = dTotal
 
     @day.save
-    render :nothing => true
+    #render :nothing => true
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   private
