@@ -1,8 +1,4 @@
 <h1>P n' P</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<p>Welcome. Today is <%= @strToday %></p>
 
-<%= link_to 'Days', days_path %>
-
-<div class"container">
-	<div class="date"><%= @strToday %></div>
-</div>
+<%= link_to 'Days', days_path, :class=>'btn btn-small btn-primary' %>
