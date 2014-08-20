@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Instant:</strong>
-  <%= @od.instant %>
+  <strong>Date:</strong>
+  <%= link_to @od.day.date, day_path(@od.day) %>
+</p>
+
+<p>
+  <strong>Timekey:</strong>
+  <%= @od.timekey %>
 </p>
 
 <p>
@@ -13,11 +18,6 @@
 <p>
   <strong>D:</strong>
   <%= @od.d %>
-</p>
-
-<p>
-  <strong>Timekey:</strong>
-  <%= @od.timekey %>
 </p>
 
 <%= link_to 'Edit', edit_od_path(@od) %> |
