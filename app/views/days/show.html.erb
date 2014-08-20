@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @day.date.strftime('%b %e, %a') %>
+</p>
+
+<h1>Listing ods</h1>
+
+<div class="container col-xs-12 col-sm-4 col-md-3">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Timekey</th>
+        <th>O</th>
+        <th>D</th>
+      </tr>
+    </thead>
+			<% @day.ods.each do |od| %>
+        <tr>
+          <td class="timekey"><%= od.timekey %></td>
+          <td><%= link_to enable_link_text(od.o), toggle_o_od_path(od), :remote => true, :class=>"btn-enable btn btn-small " + enable_btn_class(od.o) %></td>
+          <td><%= link_to enable_link_text(od.d), toggle_d_od_path(od), :remote => true, :class=>"btn-enable btn btn-small " + enable_btn_class(od.d) %></td>
+        </tr>
+			<% end %> 
+  </table>
+
+</div>
+
+<div class="clearer"></div>
+
+<div class="footer">
+	<%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
+	<%= link_to 'Back', days_path, :class=>"btn btn-small btn-primary" %>
+</div>
