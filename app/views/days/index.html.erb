@@ -1,0 +1,34 @@
+<h1>Listing days</h1>
+
+<div class="col-xs-12 col-sm-5 col-md-5">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Days</th>
+        <th>O</th>
+        <th>D</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @days.each do |day| %>
+        <tr>
+          <td><%= day.date.strftime('%b %e, %a') %></td>
+          <td class="oTotal"><%= day.oTotal %></td>
+          <td class="dTotal"><%= day.dTotal %></td>
+          <td><%= link_to 'Total', total_day_path(day), :remote => true %></td>
+          <td><%= link_to 'Show', day %></td>
+          <td><%= link_to 'Edit', edit_day_path(day) %></td>
+          <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Day', new_day_path, :class=>"btn btn-small btn-primary" %>
+
+</div>
