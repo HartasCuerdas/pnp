@@ -4,7 +4,9 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    @days = Day.all.sort_by &:date
+    today = Date.today
+    @strToday = today.strftime('%b %d')
+
     @dateparam = params[:month] ? Date.parse(params[:month]) : Date.today
     @strPrevMonthParam = (@dateparam.beginning_of_month-1).strftime("%Y-%m-01")
     @strNextMonthParam = (@dateparam.end_of_month+1).strftime("%Y-%m-01")
