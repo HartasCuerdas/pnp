@@ -9,6 +9,8 @@ class DaysController < ApplicationController
     @strPrevMonthParam = (@dateparam.beginning_of_month-1).strftime("%Y-%m-01")
     @strNextMonthParam = (@dateparam.end_of_month+1).strftime("%Y-%m-01")
 
+    @days = Day.where('date BETWEEN ? AND ?', @dateparam.beginning_of_month, @dateparam.end_of_month).all.sort_by &:date
+    #@days = Day.all.sort_by &:date
   end
 
   # GET /days/1
