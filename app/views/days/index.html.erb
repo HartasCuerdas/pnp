@@ -1,6 +1,14 @@
-<h1>Listing days</h1>
+<div class="container col-xs-12 col-sm-5 col-md-5">
 
-<div class="col-xs-12 col-sm-5 col-md-5">
+  <h1>Listing days</h1>
+
+  <div class="date">Today is <%= @strToday %></div>
+
+  <div class="navigator">
+    <div><%= link_to "<", days_path(:month => @strPrevMonthParam), :class=>'btn btn-small btn-primary' %></div>
+    <div class="current-month"><%= h @dateparam.strftime("%B %Y") %></div>
+    <div><%= link_to ">", days_path(:month => @strNextMonthParam), :class=>'btn btn-small btn-primary' %></div>
+  </div>
 
   <table class="table">
     <thead>
