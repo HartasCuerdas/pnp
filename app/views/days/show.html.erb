@@ -32,5 +32,5 @@
 
 <div class="footer">
 	<%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
-	<%= link_to 'Back', days_path, :class=>"btn btn-small btn-primary" %>
+	<%= link_to 'Back', days_path(:month => @day.date), :class=>"btn btn-small btn-primary" %>
 </div>
