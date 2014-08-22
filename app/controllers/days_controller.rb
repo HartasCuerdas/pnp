@@ -7,12 +7,19 @@ class DaysController < ApplicationController
     today = Date.today
     @strToday = today.strftime('%b %d')
 
-    @dateparam = params[:month] ? Date.parse(params[:month]) : Date.today
-    @strPrevMonthParam = (@dateparam.beginning_of_month-1).strftime("%Y-%m-01")
-    @strNextMonthParam = (@dateparam.end_of_month+1).strftime("%Y-%m-01")
+    dateParam = params[:month] ? Date.parse(params[:month]) : Date.today
+    @strCurrentMonth = dateParam.strftime("%B %Y")
 
-    @days = Day.where('date BETWEEN ? AND ?', @dateparam.beginning_of_month, @dateparam.end_of_month).all.sort_by &:date
-    #@days = Day.all.sort_by &:date
+    dateBeginningOfMonth = dateParam.beginning_of_month
+    dateEndOfMonth = dateParam.end_of_month
+
+    datePrevMonth = dateBeginningOfMonth-1
+    dateNextMonth = dateEndOfMonth+1
+
+    @strPrevMonthParam = datePrevMonth.strftime("%Y-%m-01")
+    @strNextMonthParam = dateNextMonth.strftime("%Y-%m-01")
+
+    @days = Day.where(date: (dateBeginningOfMonth..dateEndOfMonth)).all.sort_by &:date
   end
 
   # GET /days/1
