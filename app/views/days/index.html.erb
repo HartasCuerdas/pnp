@@ -6,7 +6,7 @@
 
   <div class="navigator">
     <div><%= link_to "<", days_path(:month => @strPrevMonthParam), :class=>'btn btn-small btn-primary' %></div>
-    <div class="current-month"><%= h @dateparam.strftime("%B %Y") %></div>
+    <div class="current-month"><%= h @strCurrentMonth %></div>
     <div><%= link_to ">", days_path(:month => @strNextMonthParam), :class=>'btn btn-small btn-primary' %></div>
   </div>
 
@@ -23,7 +23,7 @@
     <tbody>
       <% @days.each do |day| %>
         <tr id="<%= day.id %>">
-          <td><%= day.date.strftime('%b %e, %a') %></td>
+          <td><%= strDayDate(day) %></td>
           <td class="oTotal"><%= day.oTotal %></td>
           <td class="dTotal"><%= day.dTotal %></td>
           <td><%= link_to 'Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
