@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820002143) do
+ActiveRecord::Schema.define(version: 20140822211423) do
 
   create_table "days", force: true do |t|
     t.date     "date"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140820002143) do
     t.datetime "updated_at"
     t.integer  "oTotal"
     t.integer  "dTotal"
+    t.boolean  "well_registered"
   end
 
   create_table "ods", force: true do |t|
