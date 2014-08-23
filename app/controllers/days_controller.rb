@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
-  before_action :set_day, only: [:show, :edit, :update, :destroy]
+  before_action :set_day, only: [:show, :edit, :update, :destroy, :toggle_well_registered]
 
   # GET /days
   # GET /days.json
@@ -40,6 +40,8 @@ class DaysController < ApplicationController
   # POST /days.json
   def create
     @day = Day.new(day_params)
+
+    @day.well_registered = false
 
     hoursarr = [
       '06:00', '06:30',
@@ -123,6 +125,13 @@ class DaysController < ApplicationController
     respond_to do |format|
       format.js {}
     end
+  end
+
+  # TOGGLE_WELL_REGISTERED /days/1
+  def toggle_well_registered
+    @day.toggle!(:well_registered)
+    @day.save
+    render :nothing => true
   end
 
   private
