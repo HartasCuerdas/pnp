@@ -4,7 +4,12 @@ class OdsController < ApplicationController
   # GET /ods
   # GET /ods.json
   def index
-    @ods = Od.all
+    dayParam = params[:day_id] ? params[:day_id] : false
+    if !dayParam
+      @ods = Od.all
+    else
+      @ods = Od.where(day_id: dayParam)
+    end
   end
 
   # GET /odtoggle
