@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-  	now = Time.now
-	@strToday = now.strftime('%b %d')
+  	dateToday = Date.today
+	@strToday = dateToday.strftime('%b %d, %a')
   end
 end
