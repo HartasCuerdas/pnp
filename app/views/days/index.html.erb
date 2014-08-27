@@ -25,11 +25,11 @@
     <tbody>
       <% @days.each do |day| %>
         <tr id="<%= day.id %>">
-          <td><%= strDayDate(day) %></td>
+          <td><%= day.str_date %></td>
           <td class="oTotal"><%= day.oTotal %></td>
           <td class="dTotal"><%= day.dTotal %></td>
           <td><%= link_to 'Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
-          <td><%= link_to enable_day_link_text(day.well_registered), toggle_well_registered_day_path(day), :remote => true, :class=>"btn-enable-day btn-enable btn btn-small " + enable_btn_class(day.well_registered) %></td>
+          <td><%= link_to day.str_wellRegistered, toggle_well_registered_day_path(day), :remote => true, :class=>"btn-day-well-registered btn btn-small " + day.str_wellRegistered_TwbsBtnStyleClass %></td>
           <td><%= link_to 'Show', day %></td>
           <td><%= link_to 'Edit', edit_day_path(day) %></td>
           <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
