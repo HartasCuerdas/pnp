@@ -4,10 +4,10 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    today = Date.today
-    @strToday = today.strftime('%b %d')
+    dateToday = Date.today
+    @strToday = dateToday.strftime('%b %d, %a')
 
-    dateParam = params[:month] ? Date.parse(params[:month]) : Date.today
+    dateParam = params[:month] ? Date.parse(params[:month]) : dateToday
     @strCurrentMonth = dateParam.strftime("%B %Y")
 
     dateBeginningOfMonth = dateParam.beginning_of_month
