@@ -2,7 +2,7 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @day.date.strftime('%b %e, %a') %>
+  <%= @day.str_date %>
 </p>
 
 <h1>Listing ods</h1>
@@ -20,8 +20,8 @@
 			<% @day.ods.each do |od| %>
         <tr>
           <td class="timekey"><%= od.timekey %></td>
-          <td><%= link_to enable_link_text(od.o), toggle_o_od_path(od), :remote => true, :class=>"btn-day-od-enable btn btn-small " + enable_btn_class(od.o) %></td>
-          <td><%= link_to enable_link_text(od.d), toggle_d_od_path(od), :remote => true, :class=>"btn-day-od-enable btn btn-small " + enable_btn_class(od.d) %></td>
+          <td><%= link_to od.str_o_enabled, toggle_o_od_path(od), :remote => true, :class=>"btn-day-od-enable btn btn-small " + od.str_o_TwbsBtnStyleClass %></td>
+          <td><%= link_to od.str_o_enabled, toggle_d_od_path(od), :remote => true, :class=>"btn-day-od-enable btn btn-small " + od.str_d_TwbsBtnStyleClass %></td>
         </tr>
 			<% end %> 
   </table>
