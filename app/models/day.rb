@@ -1,6 +1,7 @@
 class Day < ActiveRecord::Base
 	#attr_accessible :date
 	has_many :ods
+	belongs_to :days
 
 	WELL_REGISTERED_TEXT_TRUE = 'Well'
 	WELL_REGISTERED_TEXT_FALSE = 'Poor'
