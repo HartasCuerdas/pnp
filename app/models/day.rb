@@ -9,6 +9,8 @@ class Day < ActiveRecord::Base
 	WELL_REGISTERED_STYLE_TRUE = 'btn-success'
 	WELL_REGISTERED_STYLE_FALSE = 'btn-danger'
 
+	IS_TODAY_STYLE = 'is-today'
+
 	def str_date
 		self.date.strftime('%b %e, %a')
 	end
@@ -19,6 +21,10 @@ class Day < ActiveRecord::Base
 
 	def str_wellRegistered_TwbsBtnStyleClass
 		self.well_registered ? WELL_REGISTERED_STYLE_TRUE : WELL_REGISTERED_STYLE_FALSE
+	end
+
+	def str_isTodayClass
+		(self.date == Date.today) ? IS_TODAY_STYLE : ''
 	end
 
 end

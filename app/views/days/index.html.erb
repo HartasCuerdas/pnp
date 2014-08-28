@@ -25,7 +25,7 @@
     <tbody>
       <% @days.each do |day| %>
         <tr id="<%= day.id %>">
-          <td><%= day.str_date %></td>
+          <td class="<%= day.str_isTodayClass %>"><%= day.str_date %></td>
           <td class="oTotal"><%= day.oTotal %></td>
           <td class="dTotal"><%= day.dTotal %></td>
           <td><%= link_to 'Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
