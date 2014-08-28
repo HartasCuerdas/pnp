@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :weeks
+
   get 'welcome/index'
   get 'ods/toggle'
   get 'ods/new_no_timekey'

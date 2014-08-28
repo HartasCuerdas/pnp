@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822211423) do
+ActiveRecord::Schema.define(version: 20140828232205) do
 
   create_table "days", force: true do |t|
     t.date     "date"
@@ -33,5 +33,12 @@ ActiveRecord::Schema.define(version: 20140822211423) do
   end
 
   add_index "ods", ["day_id"], name: "index_ods_on_day_id"
+
+  create_table "weeks", force: true do |t|
+    t.date     "firstDay"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

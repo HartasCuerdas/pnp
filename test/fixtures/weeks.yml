@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstDay: 2014-08-28
+  comment: MyText
+
+two:
+  firstDay: 2014-08-28
+  comment: MyText
