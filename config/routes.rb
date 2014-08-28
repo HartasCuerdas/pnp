@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :weeks
+
   resources :months
 
   get 'welcome/index'
