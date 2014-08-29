@@ -5,6 +5,10 @@ class WeeksController < ApplicationController
   # GET /weeks.json
   def index
     @weeks = Week.all
+
+    dateToday = Date.today
+    @strToday = dateToday.strftime('%b %d, %a')
+    
   end
 
   # GET /weeks/1
