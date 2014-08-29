@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>P n' P</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>P n' P</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
-<body class="col-xs-12">
+<body class="pnp-app col-xs-12">
 
 <%= yield %>
+
+<div class="pnp-clearer"></div>
+
+<div class="pnp-footer">
+	<div class="pnp-credits">P n' P app</div>
+	<div class="pnp-tagline">polite to register P n' P</div>
+</div>
 
 </body>
 </html>
