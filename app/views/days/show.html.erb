@@ -7,7 +7,12 @@
 
 <h1>Listing ods</h1>
 
-<div class="container col-xs-12 col-sm-4 col-md-3">
+<div class="pnp-controls">
+  <%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
+  <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
+</div>
+
+<div class="pnp-table-container">
 
   <table class="table">
     <thead>
@@ -28,9 +33,9 @@
 
 </div>
 
-<div class="clearer"></div>
+<div class="pnp-clearer"></div>
 
-<div class="footer">
+<div class="pnp-controls">
 	<%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
-	<%= link_to 'Back', days_path(:month => @day.date), :class=>"btn btn-small btn-primary" %>
+	<%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
 </div>
