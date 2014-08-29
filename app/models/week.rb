@@ -2,6 +2,10 @@ class Week < ActiveRecord::Base
 	has_many :days, dependent: :destroy
 	before_create :create_days
 
+	def str_FirstDay
+		self.firstDay.strftime('%b %e')
+	end
+
 	private
 
 		def create_days
