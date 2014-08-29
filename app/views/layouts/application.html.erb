@@ -6,9 +6,12 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body class="pnp-app col-xs-12">
+<body class="pnp-app">
+<div class="pnp-container col-xs-12 col-sm-5 col-md-5">
 
+<div class="pnp-content">
 <%= yield %>
+</div>
 
 <div class="pnp-clearer"></div>
 
@@ -17,5 +20,6 @@
 	<div class="pnp-tagline">polite to register P n' P</div>
 </div>
 
+</div>
 </body>
 </html>
