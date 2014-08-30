@@ -6,7 +6,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body class="pnp-app">
+<body class="<%= content_for?(:body_classes) ? "pnp-app " + yield(:body_classes) : "pnp-app" %>">
 <div class="pnp-container col-xs-12 col-sm-5 col-md-5">
 
 <div class="pnp-content">

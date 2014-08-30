@@ -1,16 +1,21 @@
 <% title "Day (#{@day.str_date})" %>
+<% body_classes "pnp-day pnp-show" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @day.str_date %>
-</p>
+<div id="pnp-top-section">
 
-<h1>Listing ods</h1>
+  <p>
+    <strong>Date:</strong>
+    <%= @day.str_date %>
+  </p>
 
-<div class="pnp-controls">
-  <%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
-  <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
+  <h1>Listing ods</h1>
+
+  <div class="pnp-controls">
+    <%= link_to 'Edit', edit_day_path(@day), :class=>"btn btn-small btn-primary" %>
+    <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
+  </div>
+
 </div>
 
 <div class="pnp-table-container">
