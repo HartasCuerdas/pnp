@@ -13,18 +13,10 @@
   </thead>
 
   <tbody>
-    <% @weeks.each do |week| %>
-      <tr>
-        <td><%= week.firstDay %></td>
-        <td><%= week.comment %></td>
-        <td><%= link_to 'Show', week, :class => 'btn btn-primary' %></td>
-        <td><%= link_to 'Edit', edit_week_path(week) %></td>
-        <td><%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @weeks %>
   </tbody>
 </table>
 
-<div>
-<%= link_to 'New Week', new_week_path, :class => 'btn btn-primary' %>
+<div class="pnp-week_new_week_form">
+  <%= render 'weeks/new_week_form' %>
 </div>

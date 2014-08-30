@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  resources :weeks
 
   get 'welcome/index'
-  get 'ods/toggle'
-  get 'ods/new_no_timekey'
 
   resources :ods do
     get 'toggle_o', :on => :member
@@ -14,6 +11,10 @@ Rails.application.routes.draw do
     resources :ods
     get 'total', :on => :member
     get 'toggle_well_registered', :on => :member
+  end
+
+  resources :weeks do
+    resources :days
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

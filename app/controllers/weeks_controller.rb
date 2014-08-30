@@ -9,6 +9,11 @@ class WeeksController < ApplicationController
     dateToday = Date.today
     @strToday = dateToday.strftime('%b %d, %a')
     
+    lastWeek = @weeks.last
+    @date_newWeekFirstDay = lastWeek.firstDay + 1.week
+    @week = Week.new(:firstDay => @date_newWeekFirstDay)
+    @str_newWeekFirstDay = @week.str_FirstDay
+
   end
 
   # GET /weeks/1
@@ -75,4 +80,5 @@ class WeeksController < ApplicationController
     def week_params
       params.require(:week).permit(:firstDay, :comment)
     end
+
 end
