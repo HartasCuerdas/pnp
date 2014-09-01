@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :weeks do
     resources :days
+    get 'stats', :on => :member
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
