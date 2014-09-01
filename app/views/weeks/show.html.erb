@@ -6,6 +6,33 @@
   <%= @week.str_FirstDay %>
 </p>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Stats</th>
+      <th>O</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AVG</td>
+      <td><%= @week.oAVG.round(1) %></td>
+      <td><%= @week.dAVG.round(1) %></td>
+    </tr>
+    <tr>
+      <td>MAX</td>
+      <td><%= @week.oMAX %></td>
+      <td><%= @week.dMAX %></td>
+    </tr>
+    <tr>
+      <td>MIN</td>
+      <td><%= @week.oMIN %></td>
+      <td><%= @week.dMIN %></td>
+    </tr>
+  </tbody>
+</table>
+
 <p>
   <strong>Comment:</strong>
   <%= @week.comment %>
