@@ -1,9 +1,7 @@
       <tr id="pnp-week-id-<%= week.id %>">
-        <td><%= week.firstDay %></td>
+        <td><%= link_to week.str_FirstDay, week, :class => 'btn btn-primary' %></td>
         <td class="pnp-week-oAVG"><%= week.oAVG.round(1) %></td>
         <td class="pnp-week-dAVG"><%= week.dAVG.round(1) %></td>
         <td><%= link_to 'Get Stats', stats_week_path(week), :remote => true, :class => 'btn btn-small btn-primary pnp-week-btn-stats' %></td>
-        <td><%= link_to 'Show', week, :class => 'btn btn-primary' %></td>
-        <td><%= link_to 'Edit', edit_week_path(week) %></td>
         <td><%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
