@@ -1,5 +1,5 @@
 class WeeksController < ApplicationController
-  before_action :set_week, only: [:show, :edit, :update, :destroy]
+  before_action :set_week, only: [:show, :edit, :update, :destroy, :stats]
 
   # GET /weeks
   # GET /weeks.json
@@ -67,6 +67,15 @@ class WeeksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to weeks_url, notice: 'Week was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # STATS /weeks/1
+  def stats
+    @week.calculateStats
+    @week.save
+    respond_to do |format|
+      format.js {}
     end
   end
 

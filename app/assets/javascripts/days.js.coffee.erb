@@ -1,33 +1,33 @@
 $ ->
-	wellRegistered_text_true = '<%= Day::WELL_REGISTERED_TEXT_TRUE %>'
-	wellRegistered_text_false = '<%= Day::WELL_REGISTERED_TEXT_FALSE %>'
-	wellRegistered_style_true = '<%= Day::WELL_REGISTERED_STYLE_TRUE %>'
-	wellRegistered_style_false = '<%= Day::WELL_REGISTERED_STYLE_FALSE %>'
+  wellRegistered_text_true = '<%= Day::WELL_REGISTERED_TEXT_TRUE %>'
+  wellRegistered_text_false = '<%= Day::WELL_REGISTERED_TEXT_FALSE %>'
+  wellRegistered_style_true = '<%= Day::WELL_REGISTERED_STYLE_TRUE %>'
+  wellRegistered_style_false = '<%= Day::WELL_REGISTERED_STYLE_FALSE %>'
 
-	well_registered_buttons = $ '.btn-day-well-registered'
-	well_registered_buttons.on "ajax:success", (e, data, status, xhr) ->
-		$(this)
-			.toggleClass wellRegistered_style_true
-			.toggleClass wellRegistered_style_false
-			.closest('tr').effect("highlight", {}, 1500)
-		if $(this).text() == wellRegistered_text_false
-			$(this).html wellRegistered_text_true
-		else
-			$(this).html wellRegistered_text_false
+  well_registered_buttons = $ '.pnp-btn-day-well-registered'
+  well_registered_buttons.on "ajax:success", (e, data, status, xhr) ->
+    $(this)
+      .toggleClass wellRegistered_style_true
+      .toggleClass wellRegistered_style_false
+      .closest('tr').effect("highlight", {}, 1500)
+    if $(this).text() == wellRegistered_text_false
+      $(this).html wellRegistered_text_true
+    else
+      $(this).html wellRegistered_text_false
 
 $ ->
-	od_text_true = '<%= Od::OD_TEXT_TRUE %>'
-	od_text_false = '<%= Od::OD_TEXT_FALSE %>'
-	od_style_true = '<%= Od::OD_STYLE_TRUE %>'
-	od_style_false = '<%= Od::OD_STYLE_FALSE %>'
+  od_text_true = '<%= Od::OD_TEXT_TRUE %>'
+  od_text_false = '<%= Od::OD_TEXT_FALSE %>'
+  od_style_true = '<%= Od::OD_STYLE_TRUE %>'
+  od_style_false = '<%= Od::OD_STYLE_FALSE %>'
 
-	day_ods_buttons = $ '.btn-day-od-enable'
-	day_ods_buttons.on "ajax:success", (e, data, status, xhr) ->
-		$(this)
-			.toggleClass od_style_true
-			.toggleClass od_style_false
-			.closest('tr').effect("highlight", {}, 1500)
-		if $(this).text() == od_text_true
-			$(this).html od_text_false
-		else
-			$(this).html od_text_true
+  day_ods_buttons = $ '.pnp-btn-day-od-enable'
+  day_ods_buttons.on "ajax:success", (e, data, status, xhr) ->
+    $(this)
+      .toggleClass od_style_true
+      .toggleClass od_style_false
+      .closest('tr').effect("highlight", {}, 1500)
+    if $(this).text() == od_text_true
+      $(this).html od_text_false
+    else
+      $(this).html od_text_true
