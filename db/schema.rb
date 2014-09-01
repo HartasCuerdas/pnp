@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901173347) do
+ActiveRecord::Schema.define(version: 20140901184952) do
 
   create_table "days", force: true do |t|
     t.date     "date"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140901173347) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "oAVG"
-    t.integer  "dAVG"
+    t.float    "oAVG"
+    t.float    "dAVG"
     t.integer  "oMAX"
     t.integer  "dMAX"
     t.integer  "oMIN"
