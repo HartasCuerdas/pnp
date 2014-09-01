@@ -9,6 +9,11 @@ class Week < ActiveRecord::Base
   def calculateStats
     oTotal = 0
     dTotal = 0
+    oMAX = 0
+    dMAX = 0
+    # MIN seed to 20, MIN used to be 2 or 3
+    oMIN = 20
+    dMIN = 20
     totalDays = 0
     self.days.each do |day|
       if day.well_registered
@@ -19,6 +24,18 @@ class Week < ActiveRecord::Base
         dTotal += day.dTotal
         #logger.debug "date: #{day.str_date} => dTotal: #{day.dTotal}"
         #logger.debug "dTotal: #{dTotal}"
+        if day.oTotal > oMAX
+          oMAX = day.oTotal
+        end
+        if day.oTotal < oMIN
+          oMIN = day.oTotal
+        end
+        if day.dTotal > dMAX
+          dMAX = day.dTotal
+        end
+        if day.dTotal < dMIN
+          dMIN = day.dTotal
+        end
       end
     end
     if totalDays > 0
@@ -27,6 +44,10 @@ class Week < ActiveRecord::Base
       #logger.debug "totalDays: #{totalDays}"
       #logger.debug "self.oAVG: #{self.oAVG}"
       #logger.debug "self.dAVG: #{self.dAVG}"
+      self.oMAX = oMAX
+      self.oMIN = oMIN
+      self.dMAX = dMAX
+      self.dMIN = dMIN
     else
       self.oAVG = 0
       self.dAVG = 0
