@@ -4,7 +4,7 @@ $ ->
 	wellRegistered_style_true = '<%= Day::WELL_REGISTERED_STYLE_TRUE %>'
 	wellRegistered_style_false = '<%= Day::WELL_REGISTERED_STYLE_FALSE %>'
 
-	well_registered_buttons = $ '.btn-day-well-registered'
+	well_registered_buttons = $ '.pnp-btn-day-well-registered'
 	well_registered_buttons.on "ajax:success", (e, data, status, xhr) ->
 		$(this)
 			.toggleClass wellRegistered_style_true
@@ -21,7 +21,7 @@ $ ->
 	od_style_true = '<%= Od::OD_STYLE_TRUE %>'
 	od_style_false = '<%= Od::OD_STYLE_FALSE %>'
 
-	day_ods_buttons = $ '.btn-day-od-enable'
+	day_ods_buttons = $ '.pnp-btn-day-od-enable'
 	day_ods_buttons.on "ajax:success", (e, data, status, xhr) ->
 		$(this)
 			.toggleClass od_style_true
