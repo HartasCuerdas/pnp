@@ -6,6 +6,33 @@ class Week < ActiveRecord::Base
     self.firstDay.strftime('%b %e')
   end
 
+  def calculateStats
+    oTotal = 0
+    dTotal = 0
+    totalDays = 0
+    self.days.each do |day|
+      if day.well_registered
+        totalDays += 1
+        oTotal += day.oTotal
+        #logger.debug "date: #{day.str_date} => oTotal: #{day.oTotal}"
+        #logger.debug "oTotal: #{oTotal}"
+        dTotal += day.dTotal
+        #logger.debug "date: #{day.str_date} => dTotal: #{day.dTotal}"
+        #logger.debug "dTotal: #{dTotal}"
+      end
+    end
+    if totalDays > 0
+      self.oAVG = oTotal/totalDays.to_f
+      self.dAVG = dTotal/totalDays.to_f
+      #logger.debug "totalDays: #{totalDays}"
+      #logger.debug "self.oAVG: #{self.oAVG}"
+      #logger.debug "self.dAVG: #{self.dAVG}"
+    else
+      self.oAVG = 0
+      self.dAVG = 0
+    end
+  end
+
   private
 
     def create_days
