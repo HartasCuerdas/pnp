@@ -82,18 +82,7 @@ class DaysController < ApplicationController
   def total
     #@day = Day.find(params[:id])
     
-    oTotal = 0
-    dTotal = 0
-    @day.ods.each do |od|
-      if od.o
-        oTotal+=1
-      end
-      if od.d
-        dTotal+=1
-      end
-    end
-    @day.oTotal = oTotal
-    @day.dTotal = dTotal
+    @day.calculateTotal
 
     @day.save
     #render :nothing => true

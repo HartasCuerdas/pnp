@@ -29,6 +29,23 @@ class Day < ActiveRecord::Base
     (self.date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
+  def calculateTotal
+    
+    oTotal = 0
+    dTotal = 0
+    self.ods.each do |od|
+      if od.o
+        oTotal+=1
+      end
+      if od.d
+        dTotal+=1
+      end
+    end
+    self.oTotal = oTotal
+    self.dTotal = dTotal
+
+  end
+
   private
 
     def create_ods
