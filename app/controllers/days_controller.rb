@@ -41,8 +41,6 @@ class DaysController < ApplicationController
   def create
     @day = Day.new(day_params)
 
-    @day.well_registered = false
-
     respond_to do |format|
       if @day.save
         format.html { redirect_to @day, notice: 'Day was successfully created.' }

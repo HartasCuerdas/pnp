@@ -1,6 +1,6 @@
 class Week < ActiveRecord::Base
   has_many :days, dependent: :destroy
-  before_create :create_days
+  before_create :default_values
 
   IS_CURRENT_WEEK_STYLE = 'is-current-week'
 
@@ -57,22 +57,37 @@ class Week < ActiveRecord::Base
   end
 
   def str_isCurrentWeekClass
-    logger.debug "self.firstDay: #{self.firstDay}"
+    #logger.debug "self.firstDay: #{self.firstDay}"
     currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
-    logger.debug "currentWeekFirstDay: #{currentWeekFirstDay}"
+    #logger.debug "currentWeekFirstDay: #{currentWeekFirstDay}"
     (self.firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : 'as'
   end
 
   private
 
+    def default_values
+      weeks = Week.all
+      lastWeek = weeks.last
+      date_newWeekFirstDay = lastWeek.firstDay + 1.week
+      self.firstDay = date_newWeekFirstDay
+      self.comment = ''
+      self.oAVG = 0
+      self.dAVG = 0
+      self.oMAX = 0
+      self.dMAX = 0
+      self.oMIN = 0
+      self.dMIN = 0
+      create_days
+    end
+
     def create_days
-      self.days.new(:date => self.firstDay)
-      self.days.new(:date => self.firstDay + 1.days)
-      self.days.new(:date => self.firstDay + 2.days)
-      self.days.new(:date => self.firstDay + 3.days)
-      self.days.new(:date => self.firstDay + 4.days)
-      self.days.new(:date => self.firstDay + 5.days)
-      self.days.new(:date => self.firstDay + 6.days)
+      for i in 0..6
+        create_day(self.firstDay + i.days)
+      end
+    end
+
+    def create_day(date)
+      self.days.new(:date => date, :oTotal => 0, :dTotal => 0, :well_registered => false)
     end
 
 end

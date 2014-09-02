@@ -71,9 +71,9 @@ class Day < ActiveRecord::Base
         '23:00', '23:30',
         ]
 
-        hoursarr.each do |hour|
-            self.ods.new(:timekey => hour)
-        end
+      hoursarr.each do |hour|
+        self.ods.new(:timekey => hour, :o => false, :d => false)
+      end
 
     end
 

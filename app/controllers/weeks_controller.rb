@@ -10,10 +10,8 @@ class WeeksController < ApplicationController
     @strToday = dateToday.strftime('%b %d, %a')
     
     lastWeek = @weeks.last
-    @date_newWeekFirstDay = lastWeek.firstDay + 1.week
-    @week = Week.new(:firstDay => @date_newWeekFirstDay)
-    @str_newWeekFirstDay = @week.str_FirstDay
-
+    date_newWeekFirstDay = lastWeek.firstDay + 1.week
+    @str_newWeekFirstDay = date_newWeekFirstDay.strftime('%b %e')
   end
 
   # GET /weeks/1
@@ -33,7 +31,7 @@ class WeeksController < ApplicationController
   # POST /weeks
   # POST /weeks.json
   def create
-    @week = Week.new(week_params)
+    @week = Week.new
 
     respond_to do |format|
       if @week.save
@@ -83,11 +81,6 @@ class WeeksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_week
       @week = Week.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def week_params
-      params.require(:week).permit(:firstDay, :comment)
     end
 
 end
