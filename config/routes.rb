@@ -9,13 +9,11 @@ Rails.application.routes.draw do
 
   resources :days do
     resources :ods
-    get 'total', :on => :member
     get 'toggle_well_registered', :on => :member
   end
 
   resources :weeks do
     resources :days
-    get 'stats', :on => :member
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
