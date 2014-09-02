@@ -2,6 +2,8 @@ class Week < ActiveRecord::Base
   has_many :days, dependent: :destroy
   before_create :create_days
 
+  IS_CURRENT_WEEK_STYLE = 'is-current-week'
+
   def str_FirstDay
     self.firstDay.strftime('%b %e')
   end
@@ -52,6 +54,13 @@ class Week < ActiveRecord::Base
       self.oAVG = 0
       self.dAVG = 0
     end
+  end
+
+  def str_isCurrentWeekClass
+    logger.debug "self.firstDay: #{self.firstDay}"
+    currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
+    logger.debug "currentWeekFirstDay: #{currentWeekFirstDay}"
+    (self.firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : 'as'
   end
 
   private
