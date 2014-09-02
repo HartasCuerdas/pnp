@@ -1,5 +1,5 @@
       <tr id="pnp-week-id-<%= week.id %>">
-        <td><%= link_to week.str_FirstDay, week, :class => 'btn btn-primary' %></td>
+        <td><%= link_to week.str_FirstDay, week, :class => 'btn btn-default' %></td>
         <td class="pnp-week-oAVG"><%= week.oAVG.round(1) %></td>
         <td class="pnp-week-dAVG"><%= week.dAVG.round(1) %></td>
         <td><%= link_to 'Get Stats', stats_week_path(week), :remote => true, :class => 'btn btn-small btn-primary pnp-week-btn-stats' %></td>

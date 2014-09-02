@@ -1,10 +1,18 @@
 <% title "Week (#{@week.str_FirstDay})" %>
+<% body_classes "pnp-week pnp-show" %>
+<h1><%= yield :title %></h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First day:</strong>
-  <%= @week.str_FirstDay %>
+  <strong>Comment:</strong>
+  <%= @week.comment %>
+  <%= link_to 'Edit', edit_week_path(@week) %>
 </p>
+
+<div class="pnp-controls">
+  <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
+</div>
 
 <table class="table">
   <thead>
@@ -33,11 +41,6 @@
   </tbody>
 </table>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @week.comment %>
-</p>
-
 <table class="table">
   <thead>
     <tr>
@@ -46,24 +49,15 @@
       <th>D</th>
       <th>Total</th>
       <th>Well Registered</th>
-      <th>Show</th>
     </tr>
   </thead>
   <tbody>
     <% @week.days.order(:date).each do |day| %>
-      <tr id="<%= day.id %>">
-        <td class="<%= day.str_isTodayClass %>"><%= day.str_date %></td>
-        <td class="oTotal"><%= day.oTotal %></td>
-        <td class="dTotal"><%= day.dTotal %></td>
-        <td><%= link_to 'Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
-        <td><%= link_to day.str_wellRegistered, toggle_well_registered_day_path(day), :remote => true, :class=>"pnp-btn-day-well-registered btn btn-small " + day.str_wellRegistered_TwbsBtnStyleClass %></td>
-        <td><%= link_to 'Show', day, :class => 'btn btn-primary' %></td>
-      </tr>
+      <%= render day %>
     <% end %>
   </tbody>
 </table>
 
 <div class="pnp-controls">
-  <%= link_to 'Edit', edit_week_path(@week) %> |
   <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
 </div>
