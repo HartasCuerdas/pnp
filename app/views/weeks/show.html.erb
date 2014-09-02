@@ -22,21 +22,21 @@
       <th>D</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="pnp-stats">
     <tr>
       <td>AVG</td>
-      <td><%= @week.oAVG.round(1) %></td>
-      <td><%= @week.dAVG.round(1) %></td>
+      <td id="oAVG"><%= @week.oAVG.round(1) %></td>
+      <td id="dAVG"><%= @week.dAVG.round(1) %></td>
     </tr>
     <tr>
       <td>MAX</td>
-      <td><%= @week.oMAX %></td>
-      <td><%= @week.dMAX %></td>
+      <td id="oMAX"><%= @week.oMAX %></td>
+      <td id="dMAX"><%= @week.dMAX %></td>
     </tr>
     <tr>
       <td>MIN</td>
-      <td><%= @week.oMIN %></td>
-      <td><%= @week.dMIN %></td>
+      <td id="oMIN"><%= @week.oMIN %></td>
+      <td id="dMIN"><%= @week.dMIN %></td>
     </tr>
   </tbody>
 </table>
