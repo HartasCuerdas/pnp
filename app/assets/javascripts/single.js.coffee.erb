@@ -1,0 +1,60 @@
+$ ->
+
+  # well_registered CONSTANTS
+  wellRegistered_text_true = '<%= Day::WELL_REGISTERED_TEXT_TRUE %>'
+  wellRegistered_text_false = '<%= Day::WELL_REGISTERED_TEXT_FALSE %>'
+  wellRegistered_style_true = '<%= Day::WELL_REGISTERED_STYLE_TRUE %>'
+  wellRegistered_style_false = '<%= Day::WELL_REGISTERED_STYLE_FALSE %>'
+
+  # od CONSTANTS
+  od_text_true = '<%= Od::OD_TEXT_TRUE %>'
+  od_text_false = '<%= Od::OD_TEXT_FALSE %>'
+  od_style_true = '<%= Od::OD_STYLE_TRUE %>'
+  od_style_false = '<%= Od::OD_STYLE_FALSE %>'
+
+
+  # generic
+  animate_button = (element, truestyle, falsestyle) ->
+    element.toggleClass truestyle
+    element.toggleClass falsestyle
+    element.closest('tr').effect("highlight", {}, 700)
+
+
+
+  # well_registered
+
+  well_registered_buttons = $ '.pnp-btn-day-well-registered'
+  well_registered_buttons.on "ajax:success", (e, data, status, xhr) ->
+    animate_button($(this), wellRegistered_style_true, wellRegistered_style_false)
+    if $(this).text() == wellRegistered_text_false
+      $(this).html wellRegistered_text_true
+    else
+      $(this).html wellRegistered_text_false
+
+
+
+  # od
+
+  pnp_od_update_total = (element, total_span_id) ->
+    Total = $ total_span_id
+    int_Total = parseInt(Total.text())
+    if element.text() == od_text_true
+      element.html od_text_false
+      Total.html (int_Total - 1)
+    else
+      element.html od_text_true
+      Total.html (int_Total + 1)
+    return false
+
+  pnp_od_toggle_reaction = (element, total_span_id) ->
+    animate_button(element, od_style_true, od_style_false)
+    pnp_od_update_total(element, total_span_id)
+
+  pnp_interaction = (style, total_span_id) ->
+    day_od_toggle_buttons = $ style
+    day_od_toggle_buttons.on "ajax:success", (e, data, status, xhr) ->
+      pnp_od_toggle_reaction($(this), total_span_id)
+    return false
+
+  pnp_interaction('.pnp-btn-day-o-toggle', '#oTotal')
+  pnp_interaction('.pnp-btn-day-d-toggle', '#dTotal')
