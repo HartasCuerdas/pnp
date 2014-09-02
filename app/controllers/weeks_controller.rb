@@ -71,7 +71,6 @@ class WeeksController < ApplicationController
   # STATS /weeks/1
   def stats
     @week.calculateStats
-    @week.save
     respond_to do |format|
       format.js {}
     end

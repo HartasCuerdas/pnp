@@ -3,6 +3,9 @@
 <div id="pnp-top-section">
 
   <h1><%= yield :title %></h1>
+  <div class="pnp-totals">
+    oTotal: <span id="oTotal"><%= @day.oTotal %></span>, dTotal: <span id="dTotal"><%= @day.dTotal %></span>
+  </div>
 
   <p id="notice"><%= notice %></p>
 

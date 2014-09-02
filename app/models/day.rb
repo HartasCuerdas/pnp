@@ -1,7 +1,7 @@
 class Day < ActiveRecord::Base
   #attr_accessible :date
   has_many :ods, dependent: :destroy
-  belongs_to :days
+  belongs_to :week
   before_create :create_ods
 
   WELL_REGISTERED_TEXT_TRUE = 'Well'
@@ -29,7 +29,7 @@ class Day < ActiveRecord::Base
     (self.date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
-  def calculateTotal
+  def calculateTotals
     
     oTotal = 0
     dTotal = 0
@@ -41,9 +41,22 @@ class Day < ActiveRecord::Base
         dTotal+=1
       end
     end
+    
     self.oTotal = oTotal
     self.dTotal = dTotal
+    self.save
 
+    week.calculateStats
+    week.save
+
+  end
+
+  def toggle_well_registered
+    toggle!(:well_registered)
+    calculateTotals
+    self.save
+    week.calculateStats
+    week.save
   end
 
   private

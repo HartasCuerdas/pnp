@@ -88,13 +88,13 @@ class OdsController < ApplicationController
 
   # TOGGLE_O /ods/1
   def toggle_o
-    @od.toggle!(:o)
+    @od.toggle_o
     render :nothing => true
   end
 
   # TOGGLE_D /ods/1
   def toggle_d
-    @od.toggle!(:d)
+    @od.toggle_d
     render :nothing => true
   end
 

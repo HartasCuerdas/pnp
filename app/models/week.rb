@@ -43,6 +43,8 @@ class Week < ActiveRecord::Base
     if totalDays > 0
       self.oAVG = oTotal/totalDays.to_f
       self.dAVG = dTotal/totalDays.to_f
+      #logger.debug "oTotal: #{oTotal}"
+      #logger.debug "dTotal: #{dTotal}"
       #logger.debug "totalDays: #{totalDays}"
       #logger.debug "self.oAVG: #{self.oAVG}"
       #logger.debug "self.dAVG: #{self.dAVG}"
@@ -53,7 +55,12 @@ class Week < ActiveRecord::Base
     else
       self.oAVG = 0
       self.dAVG = 0
+      self.oMAX = 0
+      self.dMAX = 0
+      self.oMIN = 0
+      self.dMIN = 0
     end
+    self.save
   end
 
   def str_isCurrentWeekClass

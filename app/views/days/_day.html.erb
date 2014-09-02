@@ -2,6 +2,5 @@
         <td class="<%= day.str_isTodayClass %>"><%= link_to day.str_date, day, :class => 'btn btn-default' %></td>
         <td class="oTotal"><%= day.oTotal %></td>
         <td class="dTotal"><%= day.dTotal %></td>
-        <td><%= link_to 'Get Total', total_day_path(day), :remote => true, :class => 'btn btn-small btn-primary' %></td>
         <td><%= link_to day.str_wellRegistered, toggle_well_registered_day_path(day), :remote => true, :class=>"pnp-btn-day-well-registered btn btn-small " + day.str_wellRegistered_TwbsBtnStyleClass %></td>
       </tr>

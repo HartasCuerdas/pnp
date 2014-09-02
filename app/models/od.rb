@@ -32,4 +32,16 @@ class Od < ActiveRecord::Base
     od ? OD_STYLE_TRUE : OD_STYLE_FALSE
   end
 
+  def toggle_o
+    toggle!(:o)
+    self.save
+    day.calculateTotals
+  end
+
+  def toggle_d
+    toggle!(:d)
+    self.save
+    day.calculateTotals
+  end
+
 end

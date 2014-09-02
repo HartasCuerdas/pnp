@@ -80,9 +80,8 @@ class DaysController < ApplicationController
   def total
     #@day = Day.find(params[:id])
     
-    @day.calculateTotal
+    @day.calculateTotals
 
-    @day.save
     #render :nothing => true
     respond_to do |format|
       format.js {}
@@ -91,8 +90,7 @@ class DaysController < ApplicationController
 
   # TOGGLE_WELL_REGISTERED /days/1
   def toggle_well_registered
-    @day.toggle!(:well_registered)
-    @day.save
+    @day.toggle_well_registered
     render :nothing => true
   end
 
