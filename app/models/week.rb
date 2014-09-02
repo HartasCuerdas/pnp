@@ -21,11 +21,7 @@ class Week < ActiveRecord::Base
       if day.well_registered
         totalDays += 1
         oTotal += day.oTotal
-        #logger.debug "date: #{day.str_date} => oTotal: #{day.oTotal}"
-        #logger.debug "oTotal: #{oTotal}"
         dTotal += day.dTotal
-        #logger.debug "date: #{day.str_date} => dTotal: #{day.dTotal}"
-        #logger.debug "dTotal: #{dTotal}"
         if day.oTotal > oMAX
           oMAX = day.oTotal
         end
@@ -43,11 +39,6 @@ class Week < ActiveRecord::Base
     if totalDays > 0
       self.oAVG = oTotal/totalDays.to_f
       self.dAVG = dTotal/totalDays.to_f
-      #logger.debug "oTotal: #{oTotal}"
-      #logger.debug "dTotal: #{dTotal}"
-      #logger.debug "totalDays: #{totalDays}"
-      #logger.debug "self.oAVG: #{self.oAVG}"
-      #logger.debug "self.dAVG: #{self.dAVG}"
       self.oMAX = oMAX
       self.oMIN = oMIN
       self.dMAX = dMAX
@@ -64,9 +55,7 @@ class Week < ActiveRecord::Base
   end
 
   def str_isCurrentWeekClass
-    #logger.debug "self.firstDay: #{self.firstDay}"
     currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
-    #logger.debug "currentWeekFirstDay: #{currentWeekFirstDay}"
     (self.firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : 'as'
   end
 
