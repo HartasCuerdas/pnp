@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
-  before_action :set_day, only: [:show, :edit, :update, :destroy, :toggle_well_registered, :total]
+  before_action :set_day, only: [:show, :edit, :update, :destroy, :toggle_well_registered]
 
   # GET /days
   # GET /days.json
@@ -76,22 +76,12 @@ class DaysController < ApplicationController
     end
   end
 
-  # TOTAL /days/1
-  def total
-    #@day = Day.find(params[:id])
-    
-    @day.calculateTotals
-
-    #render :nothing => true
-    respond_to do |format|
-      format.js {}
-    end
-  end
-
   # TOGGLE_WELL_REGISTERED /days/1
   def toggle_well_registered
     @day.toggle_well_registered
-    render :nothing => true
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   private
