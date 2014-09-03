@@ -1,1 +1,1 @@
-json.extract! @week, :id, :firstDay, :comment, :created_at, :updated_at
+json.extract! @week, :id, :firstDay, :oAVG, :dAVG, :comment, :created_at, :updated_at
