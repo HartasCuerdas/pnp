@@ -31,9 +31,4 @@ class DaysController < ApplicationController
       @week = Week.find(@day.week_id)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def day_params
-      params.require(:day).permit(:date)
-    end
-
 end
