@@ -25,6 +25,11 @@ $ ->
 
   day_wr_buttons = $ '.pnp-day-wr-btn'
   day_wr_buttons.on "ajax:success", (e, data, status, xhr) ->
+    animate_button($(this), wr_style_true, wr_style_false)
+    if $(this).text() == wr_text_false
+      $(this).html wr_text_true
+    else
+      $(this).html wr_text_false
     $("td#oAVG").html(data.oAVG.toFixed(1));
     $("td#dAVG").html(data.dAVG.toFixed(1));
     $("td#oMAX").html(data.oMAX);
@@ -32,12 +37,6 @@ $ ->
     $("td#oMIN").html(data.oMIN);
     $("td#dMIN").html(data.dMIN);
     $('tbody#pnp-stats').effect("highlight", {}, 700);
-
-    animate_button($(this), wr_style_true, wr_style_false)
-    if $(this).text() == wr_text_false
-      $(this).html wr_text_true
-    else
-      $(this).html wr_text_false
 
 
 
