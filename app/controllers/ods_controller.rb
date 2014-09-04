@@ -12,21 +12,6 @@ class OdsController < ApplicationController
     end
   end
 
-  # GET /odtoggle
-  def toggle
-  #  @ods = Od.all
-    @ods = Od.where('instant BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
-    if (@ods.nil? || @ods.empty?)
-      Od.create(
-        [
-          { :instant => DateTime.now, :timekey => '06:00' },
-          { :instant => DateTime.now, :timekey => '06:30' },
-          { :instant => DateTime.now, :timekey => '23:30' }
-        ]
-      )
-    end
-  end
-
   # GET /ods/1
   # GET /ods/1.json
   def show
@@ -34,11 +19,6 @@ class OdsController < ApplicationController
 
   # GET /ods/new
   def new
-    @od = Od.new
-  end
-
-  # GET /ods/new_no_timekey
-  def new_no_timekey
     @od = Od.new
   end
 
