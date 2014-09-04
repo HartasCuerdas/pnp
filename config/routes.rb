@@ -7,13 +7,13 @@ Rails.application.routes.draw do
 
   put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
-  resources :days do
-    resources :ods
-  end
+  get 'weeks/:week_id/days', to: 'days#index'
 
-  resources :weeks do
-    resources :days
-  end
+  get 'days/:day_id/ods', to: 'ods#index'
+
+  resources :days
+
+  resources :weeks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
