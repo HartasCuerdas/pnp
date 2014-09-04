@@ -1,6 +1,12 @@
 class OdsController < ApplicationController
   before_action :set_od, only: [:toggle_o, :toggle_d]
 
+  # GET /ods
+  # GET /ods.json
+  def index
+    @ods = Od.where(day_id: params[:day_id])
+  end
+
   # TOGGLE_O /ods/1
   def toggle_o
     @od.toggle_o
