@@ -28,7 +28,7 @@
 			<% @day.ods.each do |od| %>
         <tr>
           <td class="timekey"><%= od.timekey %></td>
-          <td><%= link_to od.str_o_enabled, toggle_o_od_path(od), :remote => true, :class=>"pnp-btn-day-o-toggle btn btn-small " + od.str_o_TwbsBtnStyleClass %></td>
+          <td><%= link_to od.str_o_enabled, {:action => :toggle_o, :controller => :ods, :id => od.id}, :method => :put, :remote => true, :class=>"pnp-btn-day-o-toggle btn btn-small " + od.str_o_TwbsBtnStyleClass %></td>
           <td><%= link_to od.str_d_enabled, toggle_d_od_path(od), :remote => true, :class=>"pnp-btn-day-d-toggle btn btn-small " + od.str_d_TwbsBtnStyleClass %></td>
         </tr>
 			<% end %> 
