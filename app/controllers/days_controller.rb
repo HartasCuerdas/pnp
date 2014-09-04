@@ -4,6 +4,8 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
+    
+=begin
     dateToday = Date.today
     @strToday = dateToday.strftime('%b %d, %a')
 
@@ -20,6 +22,10 @@ class DaysController < ApplicationController
     @strNextMonthParam = dateNextMonth.strftime("%Y-%m-01")
 
     @days = Day.where(date: (dateBeginningOfMonth..dateEndOfMonth)).all.sort_by &:date
+=end
+
+    @days = Day.where(week_id: params[:week_id])
+
   end
 
   # GET /days/1
