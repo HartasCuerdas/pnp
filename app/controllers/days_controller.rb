@@ -1,5 +1,6 @@
 class DaysController < ApplicationController
   before_action :set_day, only: [:show, :toggle_wr]
+  before_action :set_week, only: [:toggle_wr]
 
   # GET /days
   # GET /days.json
@@ -16,17 +17,18 @@ class DaysController < ApplicationController
   def toggle_wr
     @day.toggle_wr
     respond_to do |format|
-      format.js {}
+      format.json { render 'weeks/show', status: :ok }
     end
-    #respond_to do |format|
-    #  format.json { render 'days/show', status: :ok }
-    #end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_day
       @day = Day.find(params[:id])
+    end
+
+    def set_week
+      @week = Week.find(@day.week_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
