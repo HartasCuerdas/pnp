@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  put 'ods/toggle_o/:id/', to: 'ods#toggle_o', as: :ods_toggle_o_path
-  put 'ods/toggle_d/:id/', to: 'ods#toggle_d', as: :ods_toggle_d_path
+  put 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
+  put 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
+
+  put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   resources :days do
     resources :ods
-    get 'toggle_well_registered', :on => :member
   end
 
   resources :weeks do
