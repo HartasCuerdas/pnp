@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :ods do
-    get 'toggle_o', :on => :member
+    put 'toggle_o', :on => :member
     get 'toggle_d', :on => :member
   end
 
