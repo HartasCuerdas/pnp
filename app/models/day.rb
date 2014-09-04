@@ -4,12 +4,12 @@ class Day < ActiveRecord::Base
   belongs_to :week
   before_create :create_ods
 
-  WELL_REGISTERED_TEXT_TRUE = 'Well'
-  WELL_REGISTERED_TEXT_FALSE = 'Poor'
+  WR_TEXT_TRUE = 'Well'
+  WR_TEXT_FALSE = 'Poor'
   
   # Twitter Bootstrap Button Style Class
-  WELL_REGISTERED_STYLE_TRUE = 'btn-success'
-  WELL_REGISTERED_STYLE_FALSE = 'btn-danger'
+  WR_STYLE_TRUE = 'btn-success'
+  WR_STYLE_FALSE = 'btn-danger'
 
   IS_TODAY_STYLE = 'is-today'
 
@@ -17,12 +17,12 @@ class Day < ActiveRecord::Base
     self.date.strftime('%b %e, %a')
   end
 
-  def str_wellRegistered
-    self.well_registered ? WELL_REGISTERED_TEXT_TRUE : WELL_REGISTERED_TEXT_FALSE
+  def str_wr
+    self.well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
   end
 
-  def str_wellRegistered_TwbsBtnStyleClass
-    self.well_registered ? WELL_REGISTERED_STYLE_TRUE : WELL_REGISTERED_STYLE_FALSE
+  def str_wr_TwbsBtnStyleClass
+    self.well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
   end
 
   def str_isTodayClass
@@ -51,7 +51,7 @@ class Day < ActiveRecord::Base
 
   end
 
-  def toggle_well_registered
+  def toggle_wr
     toggle!(:well_registered)
     calculateTotals
     self.save
