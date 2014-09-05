@@ -15,6 +15,6 @@
 /log/*.log
 /tmp
 
-doc/guides
-doc/api
+doc
+
 .yardoc
