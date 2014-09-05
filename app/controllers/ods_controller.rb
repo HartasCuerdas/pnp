@@ -1,3 +1,4 @@
+# Ods Controller
 class OdsController < ApplicationController
   before_action :set_od, only: [:toggle_o, :toggle_d]
 
@@ -7,13 +8,13 @@ class OdsController < ApplicationController
     @ods = Od.where(day_id: params[:day_id])
   end
 
-  # TOGGLE_O /ods/1
+  # PUT TOGGLE_O /ods/1
   def toggle_o
     @od.toggle_o
     render :nothing => true
   end
 
-  # TOGGLE_D /ods/1
+  # PUT TOGGLE_D /ods/1
   def toggle_d
     @od.toggle_d
     render :nothing => true

@@ -1,34 +1,46 @@
+# Day model
 class Day < ActiveRecord::Base
   #attr_accessible :date
   has_many :ods, dependent: :destroy
   belongs_to :week
   before_create :create_ods
 
+  # Text value for boolean
   WR_TEXT_TRUE = 'Well'
+  # Text value for boolean
   WR_TEXT_FALSE = 'Poor'
   
   # Twitter Bootstrap Button Style Class
   WR_STYLE_TRUE = 'btn-success'
+  # Twitter Bootstrap Button Style Class
   WR_STYLE_FALSE = 'btn-danger'
 
+  # Style class
   IS_TODAY_STYLE = 'is-today'
 
+  # returns format date string for date
   def str_date
     self.date.strftime('%b %e, %a')
   end
 
+  # returns string for well_registered boolean
   def str_wr
     self.well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
   end
 
+  # returns Style class for well_registered boolean
   def str_wr_TwbsBtnStyleClass
     self.well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
   end
 
+  # returns Style for current day
+  # used in Week show (table of days)
   def str_isTodayClass
     (self.date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
+  # calculates oTotal and dTotal  
+  # calls Week#calculateStats
   def calculateTotals
     
     oTotal = 0
@@ -46,11 +58,13 @@ class Day < ActiveRecord::Base
     self.dTotal = dTotal
     self.save
 
+    # calls Week#calculateStats
     week.calculateStats
     week.save
 
   end
 
+  # toggles well_registered boolean value
   def toggle_wr
     toggle!(:well_registered)
     calculateTotals
@@ -61,6 +75,7 @@ class Day < ActiveRecord::Base
 
   private
 
+    # created Ods for each hour
     def create_ods
 
       hoursarr = [

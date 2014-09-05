@@ -1,3 +1,4 @@
+# Week Controller
 class WeeksController < ApplicationController
   before_action :set_week, only: [:show, :edit, :update, :destroy]
 

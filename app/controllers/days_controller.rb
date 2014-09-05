@@ -1,3 +1,4 @@
+# Days Controller
 class DaysController < ApplicationController
   before_action :set_day, only: [:show, :toggle_wr]
   before_action :set_week, only: [:toggle_wr]
@@ -13,7 +14,7 @@ class DaysController < ApplicationController
   def show
   end
 
-  # TOGGLE_WR /days/1
+  # PUT TOGGLE_WR /days/1
   def toggle_wr
     @day.toggle_wr
     respond_to do |format|
