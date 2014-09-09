@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
+  # to support AngularJS
+  match "days/:id/toggle_wr.json" => "days#toggle_wr", via: :options 
+
   get 'weeks/:week_id/days', to: 'days#index'
 
   get 'days/:day_id/ods', to: 'ods#index'
