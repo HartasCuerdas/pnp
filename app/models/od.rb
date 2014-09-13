@@ -2,6 +2,8 @@
 class Od < ActiveRecord::Base
   belongs_to :day
 
+  scope :belongs_to_day, -> (day_id) { where(day_id: day_id) }
+
   # Text value for boolean
   OD_TEXT_TRUE = 'ON'
   # Text value for boolean

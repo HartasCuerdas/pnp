@@ -5,7 +5,7 @@ class OdsController < ApplicationController
   # GET /ods
   # GET /ods.json
   def index
-    @ods = Od.where(day_id: params[:day_id])
+    @ods = Od.belongs_to_day(params[:day_id])
   end
 
   # PUT TOGGLE_O /ods/1
