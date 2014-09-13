@@ -9,7 +9,7 @@ class Week < ActiveRecord::Base
 
   # firstDay date to string
   def str_FirstDay
-    self.firstDay.strftime('%b %e')
+    firstDay.strftime('%b %e')
   end
 
   # Calculates stats
@@ -22,7 +22,7 @@ class Week < ActiveRecord::Base
     oMIN = 20
     dMIN = 20
     totalDays = 0
-    self.days.each do |day|
+    days.each do |day|
       if day.well_registered
         totalDays += 1
         oTotal += day.oTotal
@@ -63,7 +63,7 @@ class Week < ActiveRecord::Base
   # used in Weeks index
   def str_isCurrentWeekClass
     currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
-    (self.firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : ''
+    (firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : ''
   end
 
   private
@@ -85,12 +85,12 @@ class Week < ActiveRecord::Base
 
     def create_days
       for i in 0..6
-        create_day(self.firstDay + i.days)
+        create_day(firstDay + i.days)
       end
     end
 
     def create_day(date)
-      self.days.new(:date => date, :oTotal => 0, :dTotal => 0, :well_registered => false)
+      days.new(:date => date, :oTotal => 0, :dTotal => 0, :well_registered => false)
     end
 
 end

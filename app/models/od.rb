@@ -14,12 +14,12 @@ class Od < ActiveRecord::Base
 
   # returns text for o boolean
   def str_o_enabled
-    str_od_enabled(self.o)
+    str_od_enabled(o)
   end
 
   # returns text for d boolean
   def str_d_enabled
-    str_od_enabled(self.d)
+    str_od_enabled(d)
   end
 
   # returns text value for o or d boolean
@@ -29,12 +29,12 @@ class Od < ActiveRecord::Base
 
   # returns Twitter Bootstrap style for o boolean
   def str_o_TwbsBtnStyleClass
-    str_od_TwbsBtnStyleClass(self.o)
+    str_od_TwbsBtnStyleClass(o)
   end
 
   # returns Twitter Bootstrap style for d boolean
   def str_d_TwbsBtnStyleClass
-    str_od_TwbsBtnStyleClass(self.d)
+    str_od_TwbsBtnStyleClass(d)
   end
 
   # returns Twitter Bootstrap style for o or d booleans

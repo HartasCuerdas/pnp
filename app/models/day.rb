@@ -20,23 +20,23 @@ class Day < ActiveRecord::Base
 
   # returns format date string for date
   def str_date
-    self.date.strftime('%b %e, %a')
+    date.strftime('%b %e, %a')
   end
 
   # returns string for well_registered boolean
   def str_wr
-    self.well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
+    well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
   end
 
   # returns Style class for well_registered boolean
   def str_wr_TwbsBtnStyleClass
-    self.well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
+    well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
   end
 
   # returns Style for current day
   # used in Week show (table of days)
   def str_isTodayClass
-    (self.date == Date.today) ? IS_TODAY_STYLE : ''
+    (date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
   # calculates oTotal and dTotal  
@@ -45,7 +45,7 @@ class Day < ActiveRecord::Base
     
     oTotal = 0
     dTotal = 0
-    self.ods.each do |od|
+    ods.each do |od|
       if od.o
         oTotal+=1
       end
@@ -100,7 +100,7 @@ class Day < ActiveRecord::Base
         ]
 
       hoursarr.each do |hour|
-        self.ods.new(:timekey => hour, :o => false, :d => false)
+        ods.new(:timekey => hour, :o => false, :d => false)
       end
 
     end
