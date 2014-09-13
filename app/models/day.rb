@@ -5,6 +5,9 @@ class Day < ActiveRecord::Base
   belongs_to :week
   before_create :create_ods
 
+  scope :order_by_date, -> { order('date ASC') }
+  scope :belongs_to_week, -> (week_id) { where(week_id: week_id) }
+
   # Text value for boolean
   WR_TEXT_TRUE = 'Well'
   # Text value for boolean

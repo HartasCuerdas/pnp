@@ -6,7 +6,7 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    @days = Day.where(week_id: params[:week_id])
+    @days = Day.belongs_to_week(params[:week_id]).order_by_date
   end
 
   # GET /days/1
