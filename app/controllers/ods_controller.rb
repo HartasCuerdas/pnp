@@ -24,7 +24,6 @@ class OdsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_od
       @od = Od.find(params[:id])
-      @day = Day.find(@od.day_id)
     end
 
 end
