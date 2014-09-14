@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  put 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
-  put 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
+  patch 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
+  patch 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
 
-  put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
+  patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   # to support AngularJS
-  match "days/:id/toggle_wr.json" => "days#toggle_wr", via: :options 
+  #match "days/:id/toggle_wr" => "days#toggle_wr", via: :options 
 
   get 'weeks/:week_id/days', to: 'days#index'
 

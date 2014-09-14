@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # includes rule for preflight OPTIONS request
   def set_headers
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, OPTIONS'
+    headers['Access-Control-Allow-Methods'] = 'GET, PATCH, OPTIONS'
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
   end
 

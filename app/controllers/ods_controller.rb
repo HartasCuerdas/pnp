@@ -8,13 +8,13 @@ class OdsController < ApplicationController
     @ods = Od.belongs_to_day(params[:day_id])
   end
 
-  # PUT TOGGLE_O /ods/1
+  # PATCH /ods/1/toggle_o
   def toggle_o
     @od.toggle_o
     render :nothing => true
   end
 
-  # PUT TOGGLE_D /ods/1
+  # PATCH /ods/1/toggle_d
   def toggle_d
     @od.toggle_d
     render :nothing => true

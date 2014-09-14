@@ -2,5 +2,5 @@
         <td class="<%= day.str_isTodayClass %>"><%= link_to day.str_date, day, :class => 'btn btn-default' %></td>
         <td class="oTotal"><%= day.oTotal %></td>
         <td class="dTotal"><%= day.dTotal %></td>
-        <td><%= link_to day.str_wr, days_toggle_wr_path(day), :method => :put, :remote => true, :class=>"pnp-day-wr-btn btn btn-small " + day.str_wr_TwbsBtnStyleClass %></td>
+        <td><%= link_to day.str_wr, days_toggle_wr_path(day), :method => :patch, :remote => true, :class=>"pnp-day-wr-btn btn btn-small " + day.str_wr_TwbsBtnStyleClass %></td>
       </tr>

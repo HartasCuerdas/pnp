@@ -14,7 +14,7 @@ class DaysController < ApplicationController
   def show
   end
 
-  # PUT TOGGLE_WR /days/1
+  # PATCH /days/1/toggle_wr
   def toggle_wr
     @day.toggle_wr
     respond_to do |format|
