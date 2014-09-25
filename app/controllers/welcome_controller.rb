@@ -5,4 +5,11 @@ class WelcomeController < ApplicationController
   	dateToday = Date.today
     @strToday = dateToday.strftime('%b %d, %a')
   end
+
+  # OPTIONS
+  # renders nothing
+  def options
+    render nothing: true
+  end
+  
 end
