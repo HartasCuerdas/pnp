@@ -2,12 +2,6 @@
 class DaysController < ApplicationController
   before_action :set_day, only: [:show, :toggle_wr]
 
-  # OPTIONS /days
-  # renders nothing
-  def options
-    render nothing: true
-  end
-
   # GET /days
   # GET /days.json
   def index
