@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/francocedillo/files/projects/rails/pnp",
+      "folder_exclude_patterns": ["bin", "lib", "test", "tmp", "vendor", "doc", ".yardoc"],
+      "file_exclude_patterns": ["Rakefile"]
+		}
+	]
+}

@@ -1,0 +1,433 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"background",
+				"background-color: "
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font",
+				"font-style: "
+			],
+			[
+				"text",
+				"text-decoration: "
+			],
+			[
+				"bl",
+				"inline-block"
+			],
+			[
+				"od_text",
+				"od_text_false"
+			],
+			[
+				"od_styl",
+				"od_style_true"
+			],
+			[
+				"btn",
+				"btn-small"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"a",
+				"rgba()"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"pnp",
+				"pnpreg_params"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 191.0,
+		"selected_items":
+		[
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previw",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preeview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/francocedillo/files/projects/rails/pnp/pnp.sublime-project",
+		"/Users/francocedillo/files/projects/rails/pnp/app/controllers/application_controller.rb",
+		"/Users/francocedillo/files/projects/rails/pnp/doc/OdsController.html",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/controllers/weeks_controller.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/controllers/ods_controller.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/controllers/days_controller.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/controllers/application_controller.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/models/resource_base.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/models/week.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/models/od.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/models/day.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/README.rdoc",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/helpers/application_helper.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/weeks/index.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/assets/stylesheets/day.css.sass",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/assets/stylesheets/week.css.sass",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/days/_day.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/weeks/show.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/weeks/_week.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/assets/javascripts/main.js.coffee.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/layouts/application.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/routes.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/app/views/ods/_od.html.erb",
+		"/Users/francocedillo/files/projects/node/pnplb/.editorconfig",
+		"/Users/francocedillo/files/projects/node/pnplb/.node-inspectorrc",
+		"/Users/francocedillo/files/projects/node/pnplb/common/models/week.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/index.html",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/Gruntfile.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/Gulpfile.js",
+		"/Users/francocedillo/files/projects/front/app/styles/main.scss",
+		"/Users/francocedillo/files/projects/front/app/styles/timesheet.css",
+		"/Users/francocedillo/files/projects/front/app/index.html",
+		"/Users/francocedillo/files/projects/front/app/scripts/main.js",
+		"/Users/francocedillo/files/projects/front/app/scripts/timesheet.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/package.json",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/.travis.yml",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/karma.conf.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/npm-debug.log",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/weekView/weekView.html",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/e2e-tests/scenarios.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/weeksView/weeksView.html",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/main.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/e2e-tests/protractor.conf.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/dayView/dayView.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/dayView/dayView.html",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/dayView/dayView_test.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/weekView/weekView.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/weekView/weekView_test.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/weeksView/weeksView_test.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/pnp-services.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/node_modules/grunt-loopback-sdk-angular/node_modules/loopback-sdk-angular/lib/services.template.ejs",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/node_modules/grunt-loopback-sdk-angular/node_modules/loopback-sdk-angular/lib/services.template",
+		"/Users/francocedillo/files/projects/node/node_APIrest/app.js",
+		"/Users/francocedillo/files/projects/node/pnplb/package.json",
+		"/Users/francocedillo/files/projects/node/pnplb/server/datasources.json",
+		"/Users/francocedillo/files/projects/node/pnplb/common/models/week.json",
+		"/Users/francocedillo/files/projects/node/pnplb/common/models/od.json",
+		"/Users/francocedillo/files/projects/node/pnplb/common/models/day.json",
+		"/Users/francocedillo/files/projects/pnpprj/class-diagram/class-diagram.md",
+		"/Users/francocedillo/files/projects/pnpprj/README.md",
+		"/Users/francocedillo/files/projects/pnpprj/screens/screens.md",
+		"/Users/francocedillo/files/projects/pnpprj/mockups/mockups.md",
+		"/Users/francocedillo/Library/Application Support/Sublime Text 2/Packages/GitGutter/GitGutter.sublime-settings",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/README.md",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/view1/view1_test.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/view1/view1.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/app.js",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/view1/view1.html",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/bower.json",
+		"/Users/francocedillo/files/projects/angularjs/pnplbC/app/lb-services.js",
+		"/Users/francocedillo/files/projects/node/angular-seed/app/index.html",
+		"/Users/francocedillo/files/projects/node/angular-seed/app/app.js",
+		"/Users/francocedillo/files/projects/node/angular-seed/app/lb-services.js",
+		"/Users/francocedillo/files/projects/node/angular-seed/app/js/app.js",
+		"/Users/francocedillo/files/projects/node/pnplb/node_modules/loopback/package.json",
+		"/Users/francocedillo/files/projects/node/pnplb/node_modules/grunt-docular/package.json",
+		"/Users/francocedillo/files/projects/node/pnplb/.gitignore",
+		"/Users/francocedillo/files/projects/node/pnplb/client/js/lb-services.js",
+		"/Users/francocedillo/files/projects/node/pnpjs/models/week.js",
+		"/Users/francocedillo/files/projects/node/pnpjs/.git/config",
+		"/Users/francocedillo/files/projects/node/pnpjs/.gitignore",
+		"/Users/francocedillo/files/projects/node/pnpjs/routes/weeks.js",
+		"/Users/francocedillo/files/projects/node/pnpjs/routes/users.js",
+		"/Users/francocedillo/files/projects/node/pnpjs/routes/index.js",
+		"/Users/francocedillo/files/projects/node/pnpjs/package.json",
+		"/Users/francocedillo/files/projects/node/pnpjs/bin/www",
+		"/Users/francocedillo/files/projects/node/pnpjs/app.js",
+		"/Users/francocedillo/files/projects/rails/pnp/app/views/weeks/show.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp/app/models/week.rb",
+		"/Users/francocedillo/files/projects/rails/pnp/app/models/day.rb",
+		"/Users/francocedillo/files/projects/rails/pnp/app/models/od.rb",
+		"/Users/francocedillo/files/projects/rails/pnp/app/views/weeks/_week.html.erb",
+		"/Users/francocedillo/files/projects/rails/pnp/config/routes.rb",
+		"/Users/francocedillo/files/projects/rails/todo/db/development.sqlite3",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/scripts/controllers.js",
+		"/Users/francocedillo/files/projects/rails/pnp/Gemfile",
+		"/Users/francocedillo/files/projects/rails/pnp/app/controllers/days_controller.rb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/models/week.rb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/_form.html.erb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/edit.html.erb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/index.html.erb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/index.json.jbuilder",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/new.html.erb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/show.html.erb",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/app/views/weeks/show.json.jbuilder",
+		"/Users/francocedillo/files/projects/learning/hcweeks/hcw-cli/Gemfile",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/views/day-detail.tpl.html",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/scripts/app.js",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/Gulpfile.js",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/scripts/templates.js",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/.jshintrc",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/dist/index.html",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/index.html",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/scripts/services.js",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/views/week-detail.tpl.html",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/views/week-list.tpl.html",
+		"/Users/francocedillo/files/projects/angularjs/pnp-anglais/app/stylesheets/main.styl",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/locales/en.yml",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/locales/es.yml",
+		"/Users/francocedillo/files/projects/rails/pnp-client/Gemfile",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/locales/date_formats.es.yml",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/locales/date_formats.en.yml",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/application.rb",
+		"/Users/francocedillo/files/projects/rails/pnp-client/config/initializers/i18n.rb",
+		"/Users/francocedillo/files/projects/rails/pnp/.gitignore",
+		"/Users/francocedillo/files/projects/rails/pnp/doc/README_FOR_APP",
+		"/Users/francocedillo/files/projects/rails/pnp/lib/tasks/doc.rake",
+		"/Users/francocedillo/files/projects/rails/pnp/README.rdoc"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"",
+			"-jquery.js,-doc/*",
+			"-jquery.js,-app/doc/*",
+			"-jquery.js,-/doc/*",
+			"-jquery.js,-doc/*",
+			"-jquery.js,-doc",
+			"-jquery.js",
+			"jquery.js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"put",
+			"function",
+			"wiredep",
+			"view",
+			"view*",
+			"days",
+			"find",
+			"Weeks.find",
+			"Week.find",
+			"Week.findById",
+			"lbServices",
+			"lbSer",
+			"loopback-sdk-angular",
+			"description",
+			"loopback-sdk-angular",
+			"description",
+			"describeModels",
+			"models",
+			"meta",
+			"meta.methods",
+			"action",
+			"ngdocForMethod",
+			"action.description",
+			"modelName",
+			"lbServices",
+			"ngModuleName",
+			"Services",
+			"regModel",
+			"favicon",
+			"scope",
+			"$scope",
+			"week",
+			"weel",
+			"js",
+			"loopback-example-extendedAPI",
+			"pnp",
+			"self",
+			"custom",
+			"self",
+			"hc_week",
+			"templates",
+			"od_url",
+			"template",
+			"str_isTodayClass",
+			"is-today",
+			"sass",
+			"strDayDate",
+			"provincias",
+			",",
+			"date_default_timezone_set",
+			"date",
+			"simpletest_example",
+			"wraps_container",
+			"google_maps_api_v3_container",
+			"map_",
+			"map-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"pnplb",
+			"week",
+			".",
+			"vine"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"contro",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"od",
+				"doc/OdsController.html"
+			],
+			[
+				"",
+				"_config.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 164.0,
+	"status_bar_visible": true
+}
