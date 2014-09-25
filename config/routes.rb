@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   # to support AngularJS
-  #match "days/:id/toggle_wr" => "days#toggle_wr", via: :options 
+  match "days/:id/toggle_wr" => "days#options", via: :options 
 
   get 'weeks/:week_id/days', to: 'days#index'
 
