@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   match 'ods/:id/toggle_o' => 'welcome#options', via: :options
   match 'ods/:id/toggle_d' => 'welcome#options', via: :options
   match 'weeks/:id' => 'welcome#options', via: :options
+  match 'weeks' => 'welcome#options', via: :options
 
   get 'weeks/:week_id/days', to: 'days#index'
 
