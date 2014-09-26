@@ -2,9 +2,21 @@
 	"folders":
 	[
 		{
-			"path": "/Users/francocedillo/files/projects/rails/pnp",
-      "folder_exclude_patterns": ["bin", "lib", "test", "tmp", "vendor", "doc", ".yardoc"],
-      "file_exclude_patterns": ["Rakefile"]
+			"file_exclude_patterns":
+			[
+				"Rakefile"
+			],
+			"folder_exclude_patterns":
+			[
+				"bin",
+				"lib",
+				"test",
+				"tmp",
+				"vendor",
+				"doc",
+				".yardoc"
+			],
+			"path": "/Users/francocedillo/files/projects/rails/pnp"
 		}
 	]
 }
