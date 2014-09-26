@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # sets CORS headers
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'PATCH, DELETE'
+    headers['Access-Control-Allow-Methods'] = 'PATCH, DELETE, POST'
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
   end
 
