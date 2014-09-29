@@ -70,8 +70,7 @@ class Day < ActiveRecord::Base
   # toggles well_registered boolean value
   def toggle_wr
     toggle!(:well_registered)
-    week.calculateStats
-    week.save
+    week.updateStats
   end
 
   private
