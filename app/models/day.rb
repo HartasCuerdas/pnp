@@ -63,11 +63,14 @@ class Day < ActiveRecord::Base
   end
 
   # Updates Totals
-  # Calls to Week#updateStats
+  # Called by Od#toggle_o and Od#toggle_d
+  # Conditionally calls Week#updateStats
   def updateTotals
     calculateTotals
     save
-    week.updateStats
+    if well_registered
+      week.updateStats 
+    end
   end
 
   # toggles well_registered boolean value
