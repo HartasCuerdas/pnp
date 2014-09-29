@@ -1,7 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2014-08-19 16:58:26
+  date: 2014-09-28 00:00:00
+  oTotal: 0
+  dTotal: 0
+  well_registered: false
+  week: one
 
 two:
-  date: 2014-08-19 16:58:26
+  date: 2014-09-29 00:00:00
+  oTotal: 0
+  dTotal: 0
+  well_registered: false
+  week: one

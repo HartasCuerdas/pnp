@@ -2,8 +2,18 @@
 
 one:
   firstDay: 2014-08-28
-  comment: MyText
+  oAVG: 0
+  dAVG: 0
+  oMAX: 0
+  dMAX: 0
+  oMIN: 0
+  dMIN: 0
 
 two:
-  firstDay: 2014-08-28
-  comment: MyText
+  firstDay: 2014-09-05
+  oAVG: 0
+  dAVG: 0
+  oMAX: 0
+  dMAX: 0
+  oMIN: 0
+  dMIN: 0
