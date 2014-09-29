@@ -45,17 +45,17 @@ class Od < ActiveRecord::Base
   end
 
   # Toogles o  
-  # Calls Day#calculateTotals
+  # Calls Day#updateTotals
   def toggle_o
     toggle!(:o)
-    day.calculateTotals
+    day.updateTotals
   end
 
   # Toogles d  
-  # Calls Day#calculateTotals
+  # Calls Day#updateTotals
   def toggle_d
     toggle!(:d)
-    day.calculateTotals
+    day.updateTotals
   end
 
 end
