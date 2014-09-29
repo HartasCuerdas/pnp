@@ -8,40 +8,6 @@ class Day < ActiveRecord::Base
   scope :order_by_date, -> { order('date ASC') }
   scope :belongs_to_week, -> (week_id) { where(week_id: week_id) }
 
-  # Text value for boolean
-  WR_TEXT_TRUE = 'Well'
-  # Text value for boolean
-  WR_TEXT_FALSE = 'Poor'
-  
-  # Twitter Bootstrap Button Style Class
-  WR_STYLE_TRUE = 'btn-success'
-  # Twitter Bootstrap Button Style Class
-  WR_STYLE_FALSE = 'btn-danger'
-
-  # Style class
-  IS_TODAY_STYLE = 'is-today'
-
-  # returns format date string for date
-  def str_date
-    date.strftime('%b %e, %a')
-  end
-
-  # returns string for well_registered boolean
-  def str_wr
-    well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
-  end
-
-  # returns Style class for well_registered boolean
-  def str_wr_TwbsBtnStyleClass
-    well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
-  end
-
-  # returns Style for current day
-  # used in Week show (table of days)
-  def str_isTodayClass
-    (date == Date.today) ? IS_TODAY_STYLE : ''
-  end
-
   # calculates oTotal and dTotal  
   # calls Week#calculateStats
   def calculateTotals

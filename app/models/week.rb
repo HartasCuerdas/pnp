@@ -4,14 +4,6 @@ class Week < ActiveRecord::Base
   # Stablishes default values for new Weeks
   before_create :default_values
 
-  # Style class for current week
-  IS_CURRENT_WEEK_STYLE = 'is-current-week'
-
-  # firstDay date to string
-  def str_FirstDay
-    firstDay.strftime('%b %e')
-  end
-
   # Calculates stats
   def calculateStats
     oTotal = 0
@@ -63,13 +55,6 @@ class Week < ActiveRecord::Base
   def updateStats
     calculateStats
     self.save
-  end
-
-  # returns IS_CURRENT_WEEK_STYLE for current week  
-  # used in Weeks index
-  def str_isCurrentWeekClass
-    currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
-    (firstDay == currentWeekFirstDay) ? IS_CURRENT_WEEK_STYLE : ''
   end
 
   private
