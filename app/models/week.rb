@@ -70,8 +70,13 @@ class Week < ActiveRecord::Base
 
     def default_values
       weeks = Week.all
-      lastWeek = weeks.last
-      date_newWeekFirstDay = lastWeek.firstDay + 1.week
+      if ! weeks.empty?
+        lastWeek = weeks.last
+        date_newWeekFirstDay = lastWeek.firstDay + 1.week
+      else
+        currentWeekFirstDay = Date.today.beginning_of_week(:sunday)
+        date_newWeekFirstDay = currentWeekFirstDay
+      end
       self.firstDay = date_newWeekFirstDay
       self.comment = ''
       self.oAVG = 0
