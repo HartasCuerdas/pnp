@@ -59,12 +59,15 @@ class Day < ActiveRecord::Base
     
     self.oTotal = oTotal
     self.dTotal = dTotal
-    self.save
 
-    # calls Week#calculateStats
-    week.calculateStats
-    week.save
+  end
 
+  # Updates Totals
+  # Calls to Week#updateStats
+  def updateTotals
+    calculateTotals
+    save
+    week.updateStats
   end
 
   # toggles well_registered boolean value
