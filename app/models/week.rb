@@ -4,52 +4,6 @@ class Week < ActiveRecord::Base
   # Stablishes default values for new Weeks
   before_create :default_values
 
-  # Calculates stats
-  def calculateStats
-    oTotal = 0
-    dTotal = 0
-    oMAX = 0
-    dMAX = 0
-    # MIN seed to 20, MIN used to be 2 or 3
-    oMIN = 20
-    dMIN = 20
-    totalDays = 0
-    days.each do |day|
-      if day.well_registered
-        totalDays += 1
-        oTotal += day.oTotal
-        dTotal += day.dTotal
-        if day.oTotal > oMAX
-          oMAX = day.oTotal
-        end
-        if day.oTotal < oMIN
-          oMIN = day.oTotal
-        end
-        if day.dTotal > dMAX
-          dMAX = day.dTotal
-        end
-        if day.dTotal < dMIN
-          dMIN = day.dTotal
-        end
-      end
-    end
-    if totalDays > 0
-      self.oAVG = oTotal/totalDays.to_f
-      self.dAVG = dTotal/totalDays.to_f
-      self.oMAX = oMAX
-      self.oMIN = oMIN
-      self.dMAX = dMAX
-      self.dMIN = dMIN
-    else
-      self.oAVG = 0
-      self.dAVG = 0
-      self.oMAX = 0
-      self.dMAX = 0
-      self.oMIN = 0
-      self.dMIN = 0
-    end
-  end
-
   # Updates Stats
   # Calls Weeks#calculateStats
   def updateStats
@@ -58,6 +12,52 @@ class Week < ActiveRecord::Base
   end
 
   private
+
+    # Calculates stats
+    def calculateStats
+      oTotal = 0
+      dTotal = 0
+      oMAX = 0
+      dMAX = 0
+      # MIN seed to 20, MIN used to be 2 or 3
+      oMIN = 20
+      dMIN = 20
+      totalDays = 0
+      days.each do |day|
+        if day.well_registered
+          totalDays += 1
+          oTotal += day.oTotal
+          dTotal += day.dTotal
+          if day.oTotal > oMAX
+            oMAX = day.oTotal
+          end
+          if day.oTotal < oMIN
+            oMIN = day.oTotal
+          end
+          if day.dTotal > dMAX
+            dMAX = day.dTotal
+          end
+          if day.dTotal < dMIN
+            dMIN = day.dTotal
+          end
+        end
+      end
+      if totalDays > 0
+        self.oAVG = oTotal/totalDays.to_f
+        self.dAVG = dTotal/totalDays.to_f
+        self.oMAX = oMAX
+        self.oMIN = oMIN
+        self.dMAX = dMAX
+        self.dMIN = dMIN
+      else
+        self.oAVG = 0
+        self.dAVG = 0
+        self.oMAX = 0
+        self.dMAX = 0
+        self.oMIN = 0
+        self.dMIN = 0
+      end
+    end
 
     def default_values
       weeks = Week.all
