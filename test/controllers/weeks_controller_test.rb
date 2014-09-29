@@ -6,44 +6,49 @@ class WeeksControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, :format => :json
     assert_response :success
+    assert_template 'weeks/index'
     assert_not_nil assigns(:weeks)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create week" do
     assert_difference('Week.count') do
-      post :create, week: { comment: @week.comment, firstDay: @week.firstDay }
+      post :create, :format => :json, week: { firstDay: @week.firstDay }
     end
-
-    assert_redirected_to week_path(assigns(:week))
+    
+    assert_response :success
+    assert_template 'weeks/show'
+    response_contains_week_elements
   end
 
   test "should show week" do
-    get :show, id: @week
+    get :show, :format => :json, id: @week
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @week
-    assert_response :success
-  end
-
-  test "should update week" do
-    patch :update, id: @week, week: { comment: @week.comment, firstDay: @week.firstDay }
-    assert_redirected_to week_path(assigns(:week))
+    assert_template 'weeks/show'
+    response_contains_week_elements
   end
 
   test "should destroy week" do
     assert_difference('Week.count', -1) do
-      delete :destroy, id: @week
+      delete :destroy, :format => :json, id: @week
     end
 
-    assert_redirected_to weeks_path
+    assert_response :success
   end
+
+  private
+
+    def response_contains_week_elements
+      object = JSON.parse(response.body)
+      assert_not_nil object['id']
+      assert_not_nil object['oAVG']
+      assert_not_nil object['dAVG']
+      assert_not_nil object['oMAX']
+      assert_not_nil object['dMAX']
+      assert_not_nil object['oMIN']
+      assert_not_nil object['dMIN']
+      assert (object.include? 'comment')
+    end
+
 end

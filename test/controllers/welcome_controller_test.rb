@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
+  test "should get options" do
+    get :options
     assert_response :success
   end
 

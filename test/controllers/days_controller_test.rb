@@ -6,44 +6,48 @@ class DaysControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, :format => :json, week_id: @day.week
     assert_response :success
+    assert_template 'days/index'
     assert_not_nil assigns(:days)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create day" do
-    assert_difference('Day.count') do
-      post :create, day: {  }
-    end
-
-    assert_redirected_to day_path(assigns(:day))
-  end
-
   test "should show day" do
-    get :show, id: @day
+    get :show, :format => :json, id: @day
     assert_response :success
+    assert_template 'days/show'
+    response_contains_day_elements
   end
 
-  test "should get edit" do
-    get :edit, id: @day
+  test "should toogle_wr day" do
+    patch :toggle_wr, :format => :json, id: @day
     assert_response :success
+    assert_template 'weeks/show'
+    response_contains_week_elements
   end
 
-  test "should update day" do
-    patch :update, id: @day, day: {  }
-    assert_redirected_to day_path(assigns(:day))
-  end
+  private
 
-  test "should destroy day" do
-    assert_difference('Day.count', -1) do
-      delete :destroy, id: @day
+    def response_contains_day_elements
+      object = JSON.parse(response.body)
+      assert_not_nil object['id']
+      assert_not_nil object['date']
+      assert_not_nil object['oTotal']
+      assert_not_nil object['dTotal']
+      assert_not_nil object['well_registered']
+      assert_not_nil object['week_id']
     end
 
-    assert_redirected_to days_path
-  end
+    def response_contains_week_elements
+      object = JSON.parse(response.body)
+      assert_not_nil object['id']
+      assert_not_nil object['oAVG']
+      assert_not_nil object['dAVG']
+      assert_not_nil object['oMAX']
+      assert_not_nil object['dMAX']
+      assert_not_nil object['oMIN']
+      assert_not_nil object['dMIN']
+      assert (object.include? 'comment')
+    end
+
 end
