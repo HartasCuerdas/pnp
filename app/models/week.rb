@@ -56,6 +56,12 @@ class Week < ActiveRecord::Base
       self.oMIN = 0
       self.dMIN = 0
     end
+  end
+
+  # Updates Stats
+  # Calls Weeks#calculateStats
+  def updateStats
+    calculateStats
     self.save
   end
 
