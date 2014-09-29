@@ -8,26 +8,6 @@ class Day < ActiveRecord::Base
   scope :order_by_date, -> { order('date ASC') }
   scope :belongs_to_week, -> (week_id) { where(week_id: week_id) }
 
-  # calculates oTotal and dTotal  
-  # calls Week#calculateStats
-  def calculateTotals
-    
-    oTotal = 0
-    dTotal = 0
-    ods.each do |od|
-      if od.o
-        oTotal+=1
-      end
-      if od.d
-        dTotal+=1
-      end
-    end
-    
-    self.oTotal = oTotal
-    self.dTotal = dTotal
-
-  end
-
   # Updates Totals
   # Called by Od#toggle_o and Od#toggle_d
   # Conditionally calls Week#updateStats
@@ -46,6 +26,25 @@ class Day < ActiveRecord::Base
   end
 
   private
+
+    # Calculates oTotal and dTotal  
+    def calculateTotals
+      
+      oTotal = 0
+      dTotal = 0
+      ods.each do |od|
+        if od.o
+          oTotal+=1
+        end
+        if od.d
+          dTotal+=1
+        end
+      end
+      
+      self.oTotal = oTotal
+      self.dTotal = dTotal
+
+    end
 
     # created Ods for each hour
     def create_ods
