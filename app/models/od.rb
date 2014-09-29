@@ -48,7 +48,6 @@ class Od < ActiveRecord::Base
   # Calls Day#calculateTotals
   def toggle_o
     toggle!(:o)
-    self.save
     day.calculateTotals
   end
 
@@ -56,7 +55,6 @@ class Od < ActiveRecord::Base
   # Calls Day#calculateTotals
   def toggle_d
     toggle!(:d)
-    self.save
     day.calculateTotals
   end
 
