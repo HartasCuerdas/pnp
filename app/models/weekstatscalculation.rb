@@ -20,18 +20,10 @@ class WeekStatsCalculation
         totalDays += 1
         oTotal += day.oTotal
         dTotal += day.dTotal
-        if day.oTotal > oMAX
-          oMAX = day.oTotal
-        end
-        if day.oTotal < oMIN
-          oMIN = day.oTotal
-        end
-        if day.dTotal > dMAX
-          dMAX = day.dTotal
-        end
-        if day.dTotal < dMIN
-          dMIN = day.dTotal
-        end
+        oMAX = [day.oTotal, oMAX].max
+        oMIN = [day.oTotal, oMIN].min
+        dMAX = [day.oTotal, dMAX].max
+        dMIN = [day.oTotal, dMIN].min
       end
     end
 
