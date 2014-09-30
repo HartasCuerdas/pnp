@@ -3,6 +3,7 @@
 class WeekStatsCalculation
 
   # Initializes @week
+  # week is an instance of Week model
   def initialize(week)
     @week = week
   end
