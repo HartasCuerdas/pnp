@@ -1,4 +1,4 @@
-require 'weekstatscalculation'
+require 'weekstatsupdate'
 
 # Week model
 class Week < ActiveRecord::Base
@@ -9,9 +9,8 @@ class Week < ActiveRecord::Base
   # Updates Stats
   # Calls Weeks#calculateStats
   def updateStats
-    weekStatsCalculation = WeekStatsCalculation.new(self)
-    weekStatsCalculation.calculateStats
-    self.save
+    weekStatsUpdate = WeekStatsUpdate.new(self)
+    weekStatsUpdate.updateStats
   end
 
   private
@@ -30,7 +29,7 @@ class Week < ActiveRecord::Base
       self.firstDay = date_newWeekFirstDay
       self.comment = ''
       setStatsToZero
-      create_days
+      createDays
     end
 
     # Set all Stats values to Zero
