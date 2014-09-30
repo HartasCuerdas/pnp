@@ -26,3 +26,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rake',        group: :test
+
+gem 'coveralls', require: false, group: :test
