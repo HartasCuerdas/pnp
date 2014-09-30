@@ -20,11 +20,6 @@ class WeeksController < ApplicationController
   def show
   end
 
-  # GET /weeks/new
-  def new
-    @week = Week.new
-  end
-
   # GET /weeks/1/edit
   def edit
   end
@@ -36,10 +31,8 @@ class WeeksController < ApplicationController
 
     respond_to do |format|
       if @week.save
-        format.html { redirect_to @week, notice: 'Week was successfully created.' }
         format.json { render :show, status: :created, location: @week }
       else
-        format.html { render :new }
         format.json { render json: @week.errors, status: :unprocessable_entity }
       end
     end
@@ -50,10 +43,8 @@ class WeeksController < ApplicationController
   def update
     respond_to do |format|
       if @week.update(week_params)
-        format.html { redirect_to @week, notice: 'Week was successfully updated.' }
         format.json { render :show, status: :ok, location: @week }
       else
-        format.html { render :edit }
         format.json { render json: @week.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +55,6 @@ class WeeksController < ApplicationController
   def destroy
     @week.destroy
     respond_to do |format|
-      format.html { redirect_to weeks_url, notice: 'Week was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
