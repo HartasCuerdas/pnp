@@ -16,6 +16,8 @@ class Week < ActiveRecord::Base
 
   private
 
+    # Sets default values for Week creation
+    # calls Week#setStatsToZero
     def default_values
       weeks = Week.all
       if ! weeks.empty?
@@ -31,6 +33,8 @@ class Week < ActiveRecord::Base
       create_days
     end
 
+    # Set all Stats values to Zero
+    # called by WeekStatsCalculation#calculateStats
     def setStatsToZero
       self.oAVG = 0
       self.dAVG = 0
@@ -40,13 +44,17 @@ class Week < ActiveRecord::Base
       self.dMIN = 0
     end
 
-    def create_days
+    # Create 7 days of the week for current Week
+    # calls Week#createDay
+    def createDays
       for i in 0..6
-        create_day(firstDay + i.days)
+        createDay(firstDay + i.days)
       end
     end
 
-    def create_day(date)
+    # Create a Day
+    # called by Week#createDays
+    def createDay(date)
       days.new(:date => date, :oTotal => 0, :dTotal => 0, :well_registered => false)
     end
 

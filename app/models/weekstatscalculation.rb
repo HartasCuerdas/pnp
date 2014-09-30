@@ -1,9 +1,12 @@
 class WeekStatsCalculation
 
+  # Initializes @week
   def initialize(week)
     @week = week
   end
 
+  # Calculates Stats for Week
+  # calls Week#setStatsToZero
   def calculateStats
     
     oTotal = 0
