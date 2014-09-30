@@ -7,7 +7,7 @@ class WeekStatsUpdate
   def initialize(week)
     
     @week = week
-    
+
     @oTotal = 0
     @dTotal = 0
     @oMAX = 0
@@ -15,10 +15,11 @@ class WeekStatsUpdate
     # MIN seed to 20, MIN used to be 2 or 3
     @oMIN = 20
     @dMIN = 20
-    
+
   end
 
   # Update Stats for Week
+  # calls WeekStatsUpdate#updatesTempValues
   # calls WeekStatsUpdate#assignStats
   def updateStats
     
@@ -27,17 +28,22 @@ class WeekStatsUpdate
     @week.days.each do |day|
       if day.well_registered
         totalDays += 1
-        @oTotal += day.oTotal
-        @dTotal += day.dTotal
-        @oMAX = [day.oTotal, @oMAX].max
-        @oMIN = [day.oTotal, @oMIN].min
-        @dMAX = [day.oTotal, @dMAX].max
-        @dMIN = [day.oTotal, @dMIN].min
+        updateTempValues(day.oTotal, day.dTotal)
       end
     end
 
     assignStats(totalDays)
 
+  end
+
+  # Updates temporal values
+  def updateTempValues(oTotal, dTotal)
+    @oTotal += oTotal
+    @dTotal += dTotal
+    @oMAX = [oTotal, @oMAX].max
+    @oMIN = [oTotal, @oMIN].min
+    @dMAX = [dTotal, @dMAX].max
+    @dMIN = [dTotal, @dMIN].min
   end
 
   # Assigns calculates Stats to Week
