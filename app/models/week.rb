@@ -27,13 +27,17 @@ class Week < ActiveRecord::Base
       end
       self.firstDay = date_newWeekFirstDay
       self.comment = ''
+      setStatsToZero
+      create_days
+    end
+
+    def setStatsToZero
       self.oAVG = 0
       self.dAVG = 0
       self.oMAX = 0
       self.dMAX = 0
       self.oMIN = 0
       self.dMIN = 0
-      create_days
     end
 
     def create_days
