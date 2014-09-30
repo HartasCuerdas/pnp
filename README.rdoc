@@ -1,7 +1,7 @@
 = pnp service
 
 {<img src="https://travis-ci.org/HartasCuerdas/pnp.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/HartasCuerdas/pnp] {<img src="https://www.codeship.io/projects/ad4defd0-2a83-0132-13f5-3a647b7b807e/status" alt="Codeship Status for HartasCuerdas/pnp" />}[https://www.codeship.io/projects/38279] {<img src="https://codeclimate.com/github/HartasCuerdas/pnp/badges/gpa.svg" />}[https://codeclimate.com/github/HartasCuerdas/pnp] 
-{<img src="https://coveralls.io/repos/HartasCuerdas/pnp/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/HartasCuerdas/pnp?branch=master] {<img src="https://gemnasium.com/HartasCuerdas/pnp.svg" alt="Dependency Status" />}[https://gemnasium.com/HartasCuerdas/pnp]
+{<img src="https://coveralls.io/repos/HartasCuerdas/pnp/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/HartasCuerdas/pnp?branch=master] {<img src="https://gemnasium.com/HartasCuerdas/pnp.svg" alt="Dependency Status" />}[https://gemnasium.com/HartasCuerdas/pnp] {<img src="http://inch-ci.org/github/HartasCuerdas/pnp.svg?branch=master" alt="Inline docs" />}[http://inch-ci.org/github/HartasCuerdas/pnp]
 
 == Environment, Platform and Database
 
