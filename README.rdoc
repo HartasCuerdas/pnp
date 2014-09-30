@@ -1,5 +1,8 @@
 == README
 
+{<img src="https://travis-ci.org/HartasCuerdas/pnp.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/HartasCuerdas/pnp]
+{<img src="https://www.codeship.io/projects/ad4defd0-2a83-0132-13f5-3a647b7b807e/status" alt="Codeship Status for HartasCuerdas/pnp" />}[https://www.codeship.io/projects/38279]
+
 pnp service
 
 get the application up and running.
