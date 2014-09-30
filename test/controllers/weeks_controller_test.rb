@@ -14,7 +14,7 @@ class WeeksControllerTest < ActionController::TestCase
 
   test "should create week" do
     assert_difference('Week.count') do
-      post :create, :format => :json, week: { firstDay: @week.firstDay }
+      post :create, :format => :json
     end
     
     assert_response :success
