@@ -19,14 +19,14 @@ class WeeksControllerTest < ActionController::TestCase
     
     assert_response :success
     assert_template 'weeks/show'
-    response_contains_week_elements
+    response_new_week
   end
 
   test "should show week" do
     get :show, :format => :json, id: @week
     assert_response :success
     assert_template 'weeks/show'
-    response_contains_week_elements
+    response_week
   end
 
   test "should destroy week" do
@@ -39,8 +39,22 @@ class WeeksControllerTest < ActionController::TestCase
 
   private
 
-    def response_contains_week_elements
+    def response_week
       object = JSON.parse(response.body)
+      contains_correct_contents(object)
+      # is correct week
+      assert_equal(object['id'], @week.id)
+    end
+
+    def response_new_week
+      object = JSON.parse(response.body)
+      contains_correct_contents(object)
+      # is another week?
+      assert_not_equal(object['id'], @week.id)
+    end
+
+    # contains correct elements
+    def contains_correct_contents(object)
       assert_not_nil object['id']
       assert_not_nil object['oAVG']
       assert_not_nil object['dAVG']
