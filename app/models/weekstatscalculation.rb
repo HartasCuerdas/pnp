@@ -42,13 +42,8 @@ class WeekStatsCalculation
       @week.oMIN = oMIN
       @week.dMAX = dMAX
       @week.dMIN = dMIN
-    else
-      @week.oAVG = 0
-      @week.dAVG = 0
-      @week.oMAX = 0
-      @week.dMAX = 0
-      @week.oMIN = 0
-      @week.dMIN = 0
+    else      
+      @week.setStatsToZero
     end
 
   end
