@@ -14,7 +14,7 @@ Environment, Platform and Database:
 2.1.2
 
 * Rails version
-4.1.0
+4.1.6
 
 * Database
 sqlite
