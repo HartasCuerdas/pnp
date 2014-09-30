@@ -1,7 +1,7 @@
 class WeekStatsCalculation
 
-  def initialize(weekparam)
-    @week = weekparam
+  def initialize(week)
+    @week = week
   end
 
   def calculateStats
