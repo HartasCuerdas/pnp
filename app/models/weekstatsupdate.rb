@@ -37,6 +37,8 @@ class WeekStatsUpdate
   end
 
   # Updates temporal values
+  # @param [Integer] oTotal is the total of Os for a Day
+  # @param [Integer] dTotal is the total of Ds for a Day
   def updateTempValues(oTotal, dTotal)
     @oTotal += oTotal
     @dTotal += dTotal
@@ -47,6 +49,7 @@ class WeekStatsUpdate
   end
 
   # Assigns calculates Stats to Week
+  # @param [Integer] totalDays is counter for well_registered days
   # calls Week#setStatsToZero
   def assignStats(totalDays)
     if totalDays > 0
