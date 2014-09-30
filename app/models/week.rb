@@ -1,6 +1,6 @@
-# Week model
 require 'weekstatscalculation'
 
+# Week model
 class Week < ActiveRecord::Base
   has_many :days, dependent: :destroy
   # Stablishes default values for new Weeks

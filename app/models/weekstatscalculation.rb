@@ -1,3 +1,5 @@
+# WeekStatsCalculation Method Object
+# created to refactor Week Stats Calculation
 class WeekStatsCalculation
 
   # Initializes @week
