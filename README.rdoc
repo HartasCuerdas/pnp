@@ -12,6 +12,5 @@
 * Database: sqlite
 
 == Get the application up and running
-```
-rails s
-```
+
+  rails s
