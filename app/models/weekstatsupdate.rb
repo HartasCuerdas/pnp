@@ -60,7 +60,7 @@ class WeekStatsUpdate
       @week.dMAX = @dMAX
       @week.dMIN = @dMIN
     else      
-      @week.setStatsToZero
+      @week.pubSetStatsToZero
     end
     @week.save
   end

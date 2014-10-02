@@ -13,6 +13,10 @@ class Week < ActiveRecord::Base
     weekStatsUpdate.updateStats
   end
 
+  def pubSetStatsToZero
+    setStatsToZero
+  end
+
   private
 
     # Sets default values for Week creation
