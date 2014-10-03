@@ -11,13 +11,20 @@ class OdsController < ApplicationController
   # PATCH /ods/1/toggle_o
   def toggle_o
     @od.toggle_o
-    render :nothing => true
+    toggle_od_response
   end
 
   # PATCH /ods/1/toggle_d
   def toggle_d
     @od.toggle_d
-    render :nothing => true
+    toggle_od_response
+  end
+
+  def toggle_od_response
+    @day = @od.day
+    respond_to do |format|
+      format.json { render 'days/show', status: :ok }
+    end
   end
 
   private
