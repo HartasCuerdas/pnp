@@ -4,12 +4,12 @@ one:
   date: 2014-09-28 00:00:00
   oTotal: 0
   dTotal: 0
-  well_registered: false
+  wr: false
   week: one
 
 two:
   date: 2014-09-29 00:00:00
   oTotal: 0
   dTotal: 0
-  well_registered: false
+  wr: false
   week: one

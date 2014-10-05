@@ -44,7 +44,7 @@ class DaysControllerTest < ActionController::TestCase
       assert_not_nil object['date']
       assert_not_nil object['oTotal']
       assert_not_nil object['dTotal']
-      assert_not_nil object['well_registered']
+      assert_not_nil object['wr']
       assert_not_nil object['week_id']
     end
 

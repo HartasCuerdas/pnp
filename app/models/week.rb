@@ -58,7 +58,7 @@ class Week < ActiveRecord::Base
     # Create a Day
     # called by Week#createDays
     def createDay(date)
-      days.new(:date => date, :oTotal => 0, :dTotal => 0, :well_registered => false)
+      days.new(:date => date, :oTotal => 0, :dTotal => 0, :wr => false)
     end
 
 end

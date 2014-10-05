@@ -1,1 +1,1 @@
-json.extract! @day, :id, :date, :oTotal, :dTotal, :well_registered, :week_id
+json.extract! @day, :id, :date, :oTotal, :dTotal, :wr, :week_id

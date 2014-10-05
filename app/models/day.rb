@@ -14,14 +14,14 @@ class Day < ActiveRecord::Base
   def updateTotals
     calculateTotals
     save
-    if well_registered
+    if wr
       week.updateStats 
     end
   end
 
-  # toggles well_registered boolean value
+  # toggles wr boolean value
   def toggle_wr
-    toggle!(:well_registered)
+    toggle!(:wr)
     week.updateStats
   end
 

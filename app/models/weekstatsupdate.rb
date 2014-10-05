@@ -26,7 +26,7 @@ class WeekStatsUpdate
     totalDays = 0
 
     @week.days.each do |day|
-      if day.well_registered
+      if day.wr
         totalDays += 1
         updateTempValues(day.oTotal, day.dTotal)
       end
@@ -49,7 +49,7 @@ class WeekStatsUpdate
   end
 
   # Assigns calculates Stats to Week
-  # @param [Integer] totalDays is counter for well_registered days
+  # @param [Integer] totalDays is counter for wr days
   # calls Week#setStatsToZero
   def assignStats(totalDays)
     if totalDays > 0
