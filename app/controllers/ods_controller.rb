@@ -24,7 +24,7 @@ class OdsController < ApplicationController
     @day = @od.day
     @week = @day.week
     respond_to do |format|
-      format.json { render 'days/day_week', status: :ok }
+      format.json { render 'ods/od_day_week', status: :ok }
     end
   end
 
