@@ -18,7 +18,7 @@ class DaysController < ApplicationController
     @day.toggle_wr
     @week = @day.week
     respond_to do |format|
-      format.json { render 'days/toggle_wr', status: :ok }
+      format.json { render 'days/day_week', status: :ok }
     end
   end
 

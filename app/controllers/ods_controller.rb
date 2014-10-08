@@ -22,8 +22,9 @@ class OdsController < ApplicationController
 
   def toggle_od_response
     @day = @od.day
+    @week = @day.week
     respond_to do |format|
-      format.json { render 'days/show', status: :ok }
+      format.json { render 'days/day_week', status: :ok }
     end
   end
 
