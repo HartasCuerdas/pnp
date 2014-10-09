@@ -22,8 +22,8 @@ class DaysControllerTest < ActionController::TestCase
   test "should toogle_wr day" do
     patch :toggle_wr, :format => :json, id: @day
     assert_response :success
-    assert_template 'weeks/show'
-    response_owner_week
+    assert_template 'days/day_week'
+    response_toggle_wr
   end
 
   private
@@ -48,14 +48,16 @@ class DaysControllerTest < ActionController::TestCase
       assert_not_nil object['week_id']
     end
 
-    def response_owner_week
+    def response_toggle_wr
       object = JSON.parse(response.body)
       ##
       # owner week contains correct elements
       # already tested on WeeksControllerTest#contains_correct_contents
       ##
       # is correct week
-      assert_equal(object['id'], @day.week.id)
+      contains_correct_contents(object['day'])
+      assert_equal(object['day']['id'], @day.id)
+      assert_equal(object['week']['id'], @day.week.id)
     end
 
 end

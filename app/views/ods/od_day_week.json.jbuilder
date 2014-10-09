@@ -1,5 +1,5 @@
 json.od do
-  json.extract! @od, :id, :instant, :o, :d, :timekey, :created_at, :updated_at
+  json.extract! @od, :id, :instant, :o, :d, :timekey, :day_id
 end
 json.day do
   json.extract! @day, :id, :date, :oTotal, :dTotal, :wr, :week_id
