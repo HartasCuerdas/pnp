@@ -29,3 +29,5 @@ gem 'rake',        group: :test
 
 gem 'coveralls', require: false, group: :test
 gem "codeclimate-test-reporter", group: :test, require: nil
+
+gem 'traceroute', group: :development
