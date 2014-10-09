@@ -1,6 +1,6 @@
 # Week Controller
 class WeeksController < ApplicationController
-  before_action :set_week, only: [:show, :edit, :update, :destroy]
+  before_action :set_week, only: [:show, :update, :destroy]
 
   # GET /weeks
   # GET /weeks.json
@@ -18,10 +18,6 @@ class WeeksController < ApplicationController
   # GET /weeks/1
   # GET /weeks/1.json
   def show
-  end
-
-  # GET /weeks/1/edit
-  def edit
   end
 
   # POST /weeks
