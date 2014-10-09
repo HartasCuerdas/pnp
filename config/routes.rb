@@ -16,9 +16,10 @@ Rails.application.routes.draw do
 
   get 'days/:day_id/ods', to: 'ods#index'
 
-  resources :days
+  resources :days, :only => [:index, :show, :toggle_wr]
 
-  resources :weeks
+  resources :weeks, :except => [:new, :edit]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
