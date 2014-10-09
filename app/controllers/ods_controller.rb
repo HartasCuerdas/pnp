@@ -20,18 +20,18 @@ class OdsController < ApplicationController
     toggle_od_response
   end
 
-  def toggle_od_response
-    @day = @od.day
-    @week = @day.week
-    respond_to do |format|
-      format.json { render 'ods/od_day_week', status: :ok }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_od
       @od = Od.find(params[:id])
+    end
+
+    def toggle_od_response
+      @day = @od.day
+      @week = @day.week
+      respond_to do |format|
+        format.json { render 'ods/od_day_week', status: :ok }
+      end
     end
 
 end
