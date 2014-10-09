@@ -32,8 +32,6 @@ class WeeksController < ApplicationController
     respond_to do |format|
       if @week.save
         format.json { render :show, status: :created, location: @week }
-      else
-        format.json { render json: @week.errors, status: :unprocessable_entity }
       end
     end
   end
